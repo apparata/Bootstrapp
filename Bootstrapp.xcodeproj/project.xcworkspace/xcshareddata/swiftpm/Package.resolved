@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/apparata/BootstrappKit.git",
         "state": {
           "branch": null,
-          "revision": "ff00e5ba8cd3eca8abeee362ec49e1b16d1d6595",
-          "version": "0.0.2"
+          "revision": "857652bd2174a7d7a9ddc9dcd1cc0fa243622355",
+          "version": "0.0.3"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/apparata/TemplateKit.git",
         "state": {
           "branch": null,
-          "revision": "55173ba6a89f7ba837cd9a1e7b3d7547257ed0e3",
-          "version": "0.4.5"
+          "revision": "07b50022c9ff5f9244f474ceafef8955ed7a73d6",
+          "version": "0.4.8"
         }
       },
       {
