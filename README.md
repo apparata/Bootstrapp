@@ -378,53 +378,83 @@ Today is not Monday.
 
 #### Example: `if not (... and ...)`
 
-```Swift
-let template: Template = """
+Input:
+
+```text
 <{ if not (isMonday and isRaining) }>
 Today is not Monday and it is not raining.
+<{ else }>
+Today is either Monday or it is raining.
 <{ end }>
-"""
+```
 
-try template.render(context: [
-    "isMonday": true,
-    "isRaining": true
-])
+Parameters:
+
+```Swift
+"isMonday": true,
+"isRaining": true
+```
+
+Output:
+
+```text
+Today is either Monday or it is raining.
 ```
 
 #### Example: `if ... == "..."`
 
-```Swift
-let template: Template = """
+Input:
+
+```text
 <{ if license == "MIT" }>
 This is the MIT license.
 <{ end }>
-"""
+```
 
-try template.render(context: [
-    "license": "MIT"
-])
+Parameters:
+
+```Swift
+"license": "MIT"
+```
+
+Output:
+
+```text
+This is the MIT license.
 ```
 
 ### Loops
 
 #### `for ... in ...`
 
-```Swift
-let template: Template = """
+Input:
+
+```text
 Here are some types of fruits:
 <{ for fruit in fruits }>
 Fruit name: <{ fruit }>
 <{ end }>
-"""
+```
 
-try template.render(context: [
-    "fruits": [
-        "banana",
-        "orange",
-        "pineapple",
-        "pear"
-    ]
-])
+Parameters:
+
+```Swift
+"fruits": [
+    "banana",
+    "orange",
+    "pineapple",
+    "pear"   
+]
+```
+
+Output:
+
+```text
+Here are some types of fruits:
+Fruit name: banana
+Fruit name: orange
+Fruit name: pineapple
+Fruit name: pear
 ```
 
 ### Longer Example
