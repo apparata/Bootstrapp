@@ -114,6 +114,21 @@ The `Preview/` folder contains images (600x400 pixels) showcasing what the resul
 
 This is the main template specification file.
 
+#### Top Level JSON Properties
+
+| Name                  | Value                                                                     |
+|-----------------------|---------------------------------------------------------------------------|
+| specificationVersion  | The version of the Bootstap.json file format itself, e.g. `"1.0.0"`.      | 
+| templateVersion       | The version of this particular template, e.g. `"1.0.0"`.                  |
+| id                    | A unique identifier for this template. Also the name, for now.            |
+| type                  | One of `"Swift Package"`, `"Xcode Project"`, and `"General"`.             |
+| description           | A brief description of the template, shown at the top of the detail page. |
+| outputDirectoryName   | The name of the output directory. **Not** the path, just the directory name. Will be processed by substitution engine, e.g. `"<{LIBRARY_NAME_}>"`. |
+| substitutions         | Non-user-configurable text substitutions as dictionary, e.g. `["DOT": "."]` |
+| parameters            | User configurable text substitutions. Shown as form in template user interface. |
+| parametrizableFiles   | An array of regular expressions. File with names that match at least one of the regular expressions will be processed by the text substitution engine. Non-matching files will not. |
+| includeDirectories    | An array of conditions with expressions that when true will lead to the conditional inclusion of the specified directories. **(Optional)** |
+| includeFiles          | An array of conditions with expressions that when true will lead to the conditional inclusion of the specified files. **(Optional)** |
 
 #### Example: Swift Package Template
 
