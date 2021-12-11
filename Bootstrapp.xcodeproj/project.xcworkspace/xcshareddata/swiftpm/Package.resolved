@@ -101,6 +101,15 @@
         }
       },
       {
+        "package": "SystemKit",
+        "repositoryURL": "https://github.com/apparata/SystemKit.git",
+        "state": {
+          "branch": null,
+          "revision": "e3a58668b578d2bc6d8ea2e44f43381cdb9a4736",
+          "version": "1.5.0"
+        }
+      },
+      {
         "package": "TemplateKit",
         "repositoryURL": "https://github.com/apparata/TemplateKit.git",
         "state": {

@@ -24,7 +24,7 @@ class MainWindowState: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(window: NSWindow) {
+    init(window: NSWindow?) {
         self.window = window
         $alwaysOnTop
             .sink { [weak self] in

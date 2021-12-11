@@ -11,7 +11,6 @@
 		5B1676412399928B00B242C2 /* MainSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676402399928B00B242C2 /* MainSidebarView.swift */; };
 		5B1676572399BC8900B242C2 /* TemplatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676562399BC8900B242C2 /* TemplatesViewModel.swift */; };
 		5B1676592399BCDC00B242C2 /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676582399BCDC00B242C2 /* TemplateViewModel.swift */; };
-		5B66E4CE237DA8C200E7D0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4CD237DA8C200E7D0B9 /* AppDelegate.swift */; };
 		5B66E4D0237DA8C200E7D0B9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4CF237DA8C200E7D0B9 /* MainView.swift */; };
 		5B66E4D2237DA8C400E7D0B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */; };
 		5B66E4D5237DA8C400E7D0B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B66E4D4237DA8C400E7D0B9 /* Preview Assets.xcassets */; };
@@ -41,6 +40,8 @@
 		5B8AFE0A239D458400752574 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AFE09239D458400752574 /* AboutWindowController.swift */; };
 		5B8AFE0C239D4DA300752574 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AFE0B239D4DA300752574 /* AboutView.swift */; };
 		5B8AFE0F239D559500752574 /* AttributionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */; };
+		5BCA94882764C907003AFC4D /* SystemKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BCA94872764C907003AFC4D /* SystemKit */; };
+		5BCA948A2764C9BD003AFC4D /* BootstrappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */; };
 		5BCD3A71239D9297004A811A /* BootstrappKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BCD3A70239D9297004A811A /* BootstrappKit */; };
 		5BEC048F238F1E8600A72DBE /* SettingPresets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC048E238F1E8600A72DBE /* SettingPresets */; };
 /* End PBXBuildFile section */
@@ -51,7 +52,6 @@
 		5B1676562399BC8900B242C2 /* TemplatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesViewModel.swift; sourceTree = "<group>"; };
 		5B1676582399BCDC00B242C2 /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
 		5B66E4CA237DA8C200E7D0B9 /* Bootstrapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bootstrapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B66E4CD237DA8C200E7D0B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B66E4CF237DA8C200E7D0B9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B66E4D4237DA8C400E7D0B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -80,6 +80,7 @@
 		5B8AFE09239D458400752574 /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		5B8AFE0B239D4DA300752574 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionsWindowController.swift; sourceTree = "<group>"; };
+		5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrappApp.swift; sourceTree = "<group>"; };
 		5BEC048E238F1E8600A72DBE /* SettingPresets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SettingPresets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B66E4E4237DC8F600E7D0B9 /* BootstrappKit in Frameworks */,
+				5BCA94882764C907003AFC4D /* SystemKit in Frameworks */,
 				5B87530923846E6B007C9267 /* SwiftUIToolbox in Frameworks */,
 				5B875323238928E8007C9267 /* Splash in Frameworks */,
 				5BCD3A71239D9297004A811A /* BootstrappKit in Frameworks */,
@@ -143,7 +145,7 @@
 				5B66E4FF237DFF4500E7D0B9 /* Template View */,
 				5B66E4F1237DCF1800E7D0B9 /* Main Window */,
 				5B8AFE08239D456F00752574 /* About Window */,
-				5B66E4CD237DA8C200E7D0B9 /* AppDelegate.swift */,
+				5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */,
 				5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */,
 				5B87530523835B7D007C9267 /* Colors.xcassets */,
 				5B66E4D6237DA8C400E7D0B9 /* Main.storyboard */,
@@ -282,6 +284,7 @@
 				5B87530823846E6B007C9267 /* SwiftUIToolbox */,
 				5B875322238928E8007C9267 /* Splash */,
 				5BCD3A70239D9297004A811A /* BootstrappKit */,
+				5BCA94872764C907003AFC4D /* SystemKit */,
 			);
 			productName = Bootstrapp;
 			productReference = 5B66E4CA237DA8C200E7D0B9 /* Bootstrapp.app */;
@@ -315,6 +318,7 @@
 				5B87530723846E6B007C9267 /* XCRemoteSwiftPackageReference "SwiftUIToolbox" */,
 				5B875321238928E8007C9267 /* XCRemoteSwiftPackageReference "Splash" */,
 				5BCD3A6F239D9297004A811A /* XCRemoteSwiftPackageReference "BootstrappKit" */,
+				5BCA94862764C907003AFC4D /* XCRemoteSwiftPackageReference "SystemKit" */,
 			);
 			productRefGroup = 5B66E4CB237DA8C200E7D0B9 /* Products */;
 			projectDirPath = "";
@@ -358,11 +362,11 @@
 				5B1676572399BC8900B242C2 /* TemplatesViewModel.swift in Sources */,
 				5B1676592399BCDC00B242C2 /* TemplateViewModel.swift in Sources */,
 				5B87530223835389007C9267 /* NoTemplatesView.swift in Sources */,
-				5B66E4CE237DA8C200E7D0B9 /* AppDelegate.swift in Sources */,
 				5B66E4F9237DCFC300E7D0B9 /* NSToolbarItem+Convenience.swift in Sources */,
 				5B66E4FB237DCFF000E7D0B9 /* NSImage+Convenience.swift in Sources */,
 				5B875304238353B6007C9267 /* TemplateView.swift in Sources */,
 				5B8753102384A42F007C9267 /* TemplateParametersForm.swift in Sources */,
+				5BCA948A2764C9BD003AFC4D /* BootstrappApp.swift in Sources */,
 				5B87532723893FCB007C9267 /* SplashSwiftUIOutputFormat.swift in Sources */,
 				5B66E4EF237DCA6C00E7D0B9 /* Templates.swift in Sources */,
 				5B66E4FD237DD00A00E7D0B9 /* NSWindow+Extension.swift in Sources */,
@@ -609,6 +613,14 @@
 				version = 0.16.0;
 			};
 		};
+		5BCA94862764C907003AFC4D /* XCRemoteSwiftPackageReference "SystemKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apparata/SystemKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.0;
+			};
+		};
 		5BCD3A6F239D9297004A811A /* XCRemoteSwiftPackageReference "BootstrappKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apparata/BootstrappKit.git";
@@ -641,6 +653,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B875321238928E8007C9267 /* XCRemoteSwiftPackageReference "Splash" */;
 			productName = Splash;
+		};
+		5BCA94872764C907003AFC4D /* SystemKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BCA94862764C907003AFC4D /* XCRemoteSwiftPackageReference "SystemKit" */;
+			productName = SystemKit;
 		};
 		5BCD3A70239D9297004A811A /* BootstrappKit */ = {
 			isa = XCSwiftPackageProductDependency;
