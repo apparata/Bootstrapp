@@ -9,15 +9,13 @@
 /* Begin PBXBuildFile section */
 		5B16763F2399925D00B242C2 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16763E2399925D00B242C2 /* MainContentView.swift */; };
 		5B1676412399928B00B242C2 /* MainSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676402399928B00B242C2 /* MainSidebarView.swift */; };
-		5B1676572399BC8900B242C2 /* TemplatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676562399BC8900B242C2 /* TemplatesViewModel.swift */; };
-		5B1676592399BCDC00B242C2 /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676582399BCDC00B242C2 /* TemplateViewModel.swift */; };
+		5B1676572399BC8900B242C2 /* TemplatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676562399BC8900B242C2 /* TemplatesModel.swift */; };
+		5B1676592399BCDC00B242C2 /* TemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676582399BCDC00B242C2 /* TemplateModel.swift */; };
 		5B66E4D0237DA8C200E7D0B9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4CF237DA8C200E7D0B9 /* MainView.swift */; };
 		5B66E4D2237DA8C400E7D0B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */; };
 		5B66E4D5237DA8C400E7D0B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B66E4D4237DA8C400E7D0B9 /* Preview Assets.xcassets */; };
-		5B66E4D8237DA8C400E7D0B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B66E4D6237DA8C400E7D0B9 /* Main.storyboard */; };
 		5B66E4E4237DC8F600E7D0B9 /* BootstrappKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5B66E4E3237DC8F600E7D0B9 /* BootstrappKit */; };
 		5B66E4EF237DCA6C00E7D0B9 /* Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4EE237DCA6C00E7D0B9 /* Templates.swift */; };
-		5B66E4F3237DCF4500E7D0B9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4F2237DCF4500E7D0B9 /* MainWindowController.swift */; };
 		5B66E4F5237DCF5600E7D0B9 /* MainSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4F4237DCF5600E7D0B9 /* MainSplitView.swift */; };
 		5B66E4F7237DCF6100E7D0B9 /* SidebarSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4F6237DCF6100E7D0B9 /* SidebarSearchField.swift */; };
 		5B66E4F9237DCFC300E7D0B9 /* NSToolbarItem+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4F8237DCFC300E7D0B9 /* NSToolbarItem+Convenience.swift */; };
@@ -42,6 +40,19 @@
 		5B8AFE0F239D559500752574 /* AttributionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */; };
 		5BCA94882764C907003AFC4D /* SystemKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BCA94872764C907003AFC4D /* SystemKit */; };
 		5BCA948A2764C9BD003AFC4D /* BootstrappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */; };
+		5BCA948D2764CD38003AFC4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA948C2764CD38003AFC4D /* SettingsView.swift */; };
+		5BCA948F2764CD68003AFC4D /* GeneralSettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA948E2764CD68003AFC4D /* GeneralSettingsTab.swift */; };
+		5BCA94922764D0E1003AFC4D /* Bundle+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94912764D0E1003AFC4D /* Bundle+Name.swift */; };
+		5BCA94952764D0FD003AFC4D /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94942764D0FD003AFC4D /* Bundle+Version.swift */; };
+		5BCA94972764D1D8003AFC4D /* Bundle+Copyright.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94962764D1D8003AFC4D /* Bundle+Copyright.swift */; };
+		5BCA94992764D64D003AFC4D /* WindowAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94982764D64D003AFC4D /* WindowAccessor.swift */; };
+		5BCA949B2764E2AE003AFC4D /* WindowsAlwaysOnTopSidebarToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA949A2764E2AE003AFC4D /* WindowsAlwaysOnTopSidebarToggle.swift */; };
+		5BCA949E2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA949D2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift */; };
+		5BCA94A02764E908003AFC4D /* ActionNotifications.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA949F2764E908003AFC4D /* ActionNotifications.swift.swift */; };
+		5BCA94A327651270003AFC4D /* TemplateCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A227651270003AFC4D /* TemplateCommands.swift */; };
+		5BCA94A52765146C003AFC4D /* AboutCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A42765146C003AFC4D /* AboutCommand.swift */; };
+		5BCA94A7276521FA003AFC4D /* DropTargetShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A6276521FA003AFC4D /* DropTargetShape.swift */; };
+		5BCA94A927653CF2003AFC4D /* URL+Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A827653CF2003AFC4D /* URL+Bookmark.swift */; };
 		5BCD3A71239D9297004A811A /* BootstrappKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BCD3A70239D9297004A811A /* BootstrappKit */; };
 		5BEC048F238F1E8600A72DBE /* SettingPresets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC048E238F1E8600A72DBE /* SettingPresets */; };
 /* End PBXBuildFile section */
@@ -49,17 +60,15 @@
 /* Begin PBXFileReference section */
 		5B16763E2399925D00B242C2 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		5B1676402399928B00B242C2 /* MainSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSidebarView.swift; sourceTree = "<group>"; };
-		5B1676562399BC8900B242C2 /* TemplatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesViewModel.swift; sourceTree = "<group>"; };
-		5B1676582399BCDC00B242C2 /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
+		5B1676562399BC8900B242C2 /* TemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesModel.swift; sourceTree = "<group>"; };
+		5B1676582399BCDC00B242C2 /* TemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateModel.swift; sourceTree = "<group>"; };
 		5B66E4CA237DA8C200E7D0B9 /* Bootstrapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bootstrapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B66E4CF237DA8C200E7D0B9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B66E4D4237DA8C400E7D0B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5B66E4D7237DA8C400E7D0B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B66E4D9237DA8C400E7D0B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B66E4DA237DA8C400E7D0B9 /* Bootstrapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bootstrapp.entitlements; sourceTree = "<group>"; };
 		5B66E4EE237DCA6C00E7D0B9 /* Templates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Templates.swift; sourceTree = "<group>"; };
-		5B66E4F2237DCF4500E7D0B9 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		5B66E4F4237DCF5600E7D0B9 /* MainSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitView.swift; sourceTree = "<group>"; };
 		5B66E4F6237DCF6100E7D0B9 /* SidebarSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarSearchField.swift; sourceTree = "<group>"; };
 		5B66E4F8237DCFC300E7D0B9 /* NSToolbarItem+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSToolbarItem+Convenience.swift"; sourceTree = "<group>"; };
@@ -81,6 +90,19 @@
 		5B8AFE0B239D4DA300752574 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionsWindowController.swift; sourceTree = "<group>"; };
 		5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrappApp.swift; sourceTree = "<group>"; };
+		5BCA948C2764CD38003AFC4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5BCA948E2764CD68003AFC4D /* GeneralSettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsTab.swift; sourceTree = "<group>"; };
+		5BCA94912764D0E1003AFC4D /* Bundle+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Name.swift"; sourceTree = "<group>"; };
+		5BCA94942764D0FD003AFC4D /* Bundle+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Version.swift"; sourceTree = "<group>"; };
+		5BCA94962764D1D8003AFC4D /* Bundle+Copyright.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Copyright.swift"; sourceTree = "<group>"; };
+		5BCA94982764D64D003AFC4D /* WindowAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowAccessor.swift; sourceTree = "<group>"; };
+		5BCA949A2764E2AE003AFC4D /* WindowsAlwaysOnTopSidebarToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsAlwaysOnTopSidebarToggle.swift; sourceTree = "<group>"; };
+		5BCA949D2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSidebarToolbarItem.swift; sourceTree = "<group>"; };
+		5BCA949F2764E908003AFC4D /* ActionNotifications.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionNotifications.swift.swift; sourceTree = "<group>"; };
+		5BCA94A227651270003AFC4D /* TemplateCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCommands.swift; sourceTree = "<group>"; };
+		5BCA94A42765146C003AFC4D /* AboutCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCommand.swift; sourceTree = "<group>"; };
+		5BCA94A6276521FA003AFC4D /* DropTargetShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropTargetShape.swift; sourceTree = "<group>"; };
+		5BCA94A827653CF2003AFC4D /* URL+Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Bookmark.swift"; sourceTree = "<group>"; };
 		5BEC048E238F1E8600A72DBE /* SettingPresets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SettingPresets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,8 +133,9 @@
 		5B1676552399BC7600B242C2 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				5B1676562399BC8900B242C2 /* TemplatesViewModel.swift */,
-				5B1676582399BCDC00B242C2 /* TemplateViewModel.swift */,
+				5B1676562399BC8900B242C2 /* TemplatesModel.swift */,
+				5B1676582399BCDC00B242C2 /* TemplateModel.swift */,
+				5BCA949F2764E908003AFC4D /* ActionNotifications.swift.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -145,10 +168,10 @@
 				5B66E4FF237DFF4500E7D0B9 /* Template View */,
 				5B66E4F1237DCF1800E7D0B9 /* Main Window */,
 				5B8AFE08239D456F00752574 /* About Window */,
+				5BCA948B2764CD26003AFC4D /* Settings */,
 				5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */,
 				5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */,
 				5B87530523835B7D007C9267 /* Colors.xcassets */,
-				5B66E4D6237DA8C400E7D0B9 /* Main.storyboard */,
 				5B66E4D9237DA8C400E7D0B9 /* Info.plist */,
 				5B66E4DA237DA8C400E7D0B9 /* Bootstrapp.entitlements */,
 				5B8AFE05239D41AA00752574 /* ATTRIBUTIONS */,
@@ -175,8 +198,10 @@
 		5B66E4EB237DCA5300E7D0B9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				5B87532623893FCB007C9267 /* SplashSwiftUIOutputFormat.swift */,
 				5B66E4FE237DD01000E7D0B9 /* AppKit Extensions */,
+				5BCA94932764D0E5003AFC4D /* Bundle Extensions */,
+				5B87532623893FCB007C9267 /* SplashSwiftUIOutputFormat.swift */,
+				5BCA94A827653CF2003AFC4D /* URL+Bookmark.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -193,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				5B16763D2399924900B242C2 /* Sidebar */,
-				5B66E4F2237DCF4500E7D0B9 /* MainWindowController.swift */,
 				5B66E500237E19D500E7D0B9 /* MainWindowState.swift */,
 				5B66E4CF237DA8C200E7D0B9 /* MainView.swift */,
 				5B66E4F4237DCF5600E7D0B9 /* MainSplitView.swift */,
@@ -221,6 +245,7 @@
 				5B87530F2384A42F007C9267 /* TemplateParametersForm.swift */,
 				5B87531523874234007C9267 /* InvalidInputSheet.swift */,
 				5B87531F2388B98D007C9267 /* TemplateView+MarkinStyle.swift */,
+				5BCA94A227651270003AFC4D /* TemplateCommands.swift */,
 			);
 			path = "Template View";
 			sourceTree = "<group>";
@@ -228,9 +253,9 @@
 		5B87531123873648007C9267 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				5B87531223873662007C9267 /* MacButton.swift */,
-				5B66E4F6237DCF6100E7D0B9 /* SidebarSearchField.swift */,
+				5BCA949C2764E2D3003AFC4D /* Mac */,
 				5B87532423892A38007C9267 /* SwiftText.swift */,
+				5BCA94A6276521FA003AFC4D /* DropTargetShape.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -241,6 +266,7 @@
 				5B8AFE0D239D558200752574 /* Attributions Window */,
 				5B8AFE09239D458400752574 /* AboutWindowController.swift */,
 				5B8AFE0B239D4DA300752574 /* AboutView.swift */,
+				5BCA94A42765146C003AFC4D /* AboutCommand.swift */,
 			);
 			path = "About Window";
 			sourceTree = "<group>";
@@ -251,6 +277,45 @@
 				5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */,
 			);
 			path = "Attributions Window";
+			sourceTree = "<group>";
+		};
+		5BCA948B2764CD26003AFC4D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5BCA94902764CD6E003AFC4D /* Tabs */,
+				5BCA948C2764CD38003AFC4D /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5BCA94902764CD6E003AFC4D /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				5BCA948E2764CD68003AFC4D /* GeneralSettingsTab.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		5BCA94932764D0E5003AFC4D /* Bundle Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5BCA94912764D0E1003AFC4D /* Bundle+Name.swift */,
+				5BCA94942764D0FD003AFC4D /* Bundle+Version.swift */,
+				5BCA94962764D1D8003AFC4D /* Bundle+Copyright.swift */,
+			);
+			path = "Bundle Extensions";
+			sourceTree = "<group>";
+		};
+		5BCA949C2764E2D3003AFC4D /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				5B87531223873662007C9267 /* MacButton.swift */,
+				5B66E4F6237DCF6100E7D0B9 /* SidebarSearchField.swift */,
+				5BCA94982764D64D003AFC4D /* WindowAccessor.swift */,
+				5BCA949A2764E2AE003AFC4D /* WindowsAlwaysOnTopSidebarToggle.swift */,
+				5BCA949D2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift */,
+			);
+			path = Mac;
 			sourceTree = "<group>";
 		};
 		5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.11.0 */ = {
@@ -335,7 +400,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B8AFE06239D41AA00752574 /* ATTRIBUTIONS in Resources */,
-				5B66E4D8237DA8C400E7D0B9 /* Main.storyboard in Resources */,
 				5B87530623835B7D007C9267 /* Colors.xcassets in Resources */,
 				5B66E4D5237DA8C400E7D0B9 /* Preview Assets.xcassets in Resources */,
 				5B66E4D2237DA8C400E7D0B9 /* Assets.xcassets in Resources */,
@@ -350,19 +414,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCA94972764D1D8003AFC4D /* Bundle+Copyright.swift in Sources */,
+				5BCA94A927653CF2003AFC4D /* URL+Bookmark.swift in Sources */,
 				5B66E4D0237DA8C200E7D0B9 /* MainView.swift in Sources */,
+				5BCA94922764D0E1003AFC4D /* Bundle+Name.swift in Sources */,
 				5B66E501237E19D500E7D0B9 /* MainWindowState.swift in Sources */,
 				5B87532523892A38007C9267 /* SwiftText.swift in Sources */,
 				5B87531623874234007C9267 /* InvalidInputSheet.swift in Sources */,
 				5B66E4F5237DCF5600E7D0B9 /* MainSplitView.swift in Sources */,
+				5BCA949B2764E2AE003AFC4D /* WindowsAlwaysOnTopSidebarToggle.swift in Sources */,
 				5B8753202388B98D007C9267 /* TemplateView+MarkinStyle.swift in Sources */,
 				5B66E4F7237DCF6100E7D0B9 /* SidebarSearchField.swift in Sources */,
 				5B8AFE0F239D559500752574 /* AttributionsWindowController.swift in Sources */,
+				5BCA94A327651270003AFC4D /* TemplateCommands.swift in Sources */,
 				5B1676412399928B00B242C2 /* MainSidebarView.swift in Sources */,
-				5B1676572399BC8900B242C2 /* TemplatesViewModel.swift in Sources */,
-				5B1676592399BCDC00B242C2 /* TemplateViewModel.swift in Sources */,
+				5BCA94A7276521FA003AFC4D /* DropTargetShape.swift in Sources */,
+				5B1676572399BC8900B242C2 /* TemplatesModel.swift in Sources */,
+				5BCA94A02764E908003AFC4D /* ActionNotifications.swift.swift in Sources */,
+				5BCA948F2764CD68003AFC4D /* GeneralSettingsTab.swift in Sources */,
+				5B1676592399BCDC00B242C2 /* TemplateModel.swift in Sources */,
 				5B87530223835389007C9267 /* NoTemplatesView.swift in Sources */,
 				5B66E4F9237DCFC300E7D0B9 /* NSToolbarItem+Convenience.swift in Sources */,
+				5BCA949E2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift in Sources */,
 				5B66E4FB237DCFF000E7D0B9 /* NSImage+Convenience.swift in Sources */,
 				5B875304238353B6007C9267 /* TemplateView.swift in Sources */,
 				5B8753102384A42F007C9267 /* TemplateParametersForm.swift in Sources */,
@@ -370,11 +443,14 @@
 				5B87532723893FCB007C9267 /* SplashSwiftUIOutputFormat.swift in Sources */,
 				5B66E4EF237DCA6C00E7D0B9 /* Templates.swift in Sources */,
 				5B66E4FD237DD00A00E7D0B9 /* NSWindow+Extension.swift in Sources */,
+				5BCA94952764D0FD003AFC4D /* Bundle+Version.swift in Sources */,
 				5B8AFE0C239D4DA300752574 /* AboutView.swift in Sources */,
+				5BCA948D2764CD38003AFC4D /* SettingsView.swift in Sources */,
 				5B87530E23849102007C9267 /* TemplatePreview.swift in Sources */,
+				5BCA94992764D64D003AFC4D /* WindowAccessor.swift in Sources */,
+				5BCA94A52765146C003AFC4D /* AboutCommand.swift in Sources */,
 				5B87531323873662007C9267 /* MacButton.swift in Sources */,
 				5B8AFE0A239D458400752574 /* AboutWindowController.swift in Sources */,
-				5B66E4F3237DCF4500E7D0B9 /* MainWindowController.swift in Sources */,
 				5B16763F2399925D00B242C2 /* MainContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,17 +467,6 @@
 			productRef = 5B66E4E9237DC8FE00E7D0B9 /* SwiftUIToolbox */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5B66E4D6237DA8C400E7D0B9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B66E4D7237DA8C400E7D0B9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5B66E4DB237DA8C400E7D0B9 /* Debug */ = {

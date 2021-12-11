@@ -9,12 +9,12 @@ import SwiftUIToolbox
 
 struct MainSplitView: View {
     
-    @ObservedObject private var searchFilter = SearchFilter<TemplateViewModel>()
+    @ObservedObject private var searchFilter = SearchFilter<TemplateModel>()
     
-    @EnvironmentObject private var templatesViewModel: TemplatesViewModel
+    @EnvironmentObject private var templatesViewModel: TemplatesModel
     
     @EnvironmentObject var windowState: MainWindowState
-    
+        
     init() {
         //
     }
@@ -23,9 +23,6 @@ struct MainSplitView: View {
         NavigationView {
             
             MainSidebarView {
-                
-                SidebarSearchField(text: $searchFilter.searchText)
-                    .padding(EdgeInsets(top: 16, leading: 10, bottom: 0, trailing: 10))
                 
                 List(selection: $templatesViewModel.templateSelection) {
                     ForEach(templatesViewModel.templatesByCategory.keys.sorted(), id: \.self) { category in
@@ -48,15 +45,24 @@ struct MainSplitView: View {
                     }
                 }
                 .listStyle(SidebarListStyle())
-                
-                Divider()
-                
-                Toggle("Always on top", isOn: $windowState.alwaysOnTop)
-                    .foregroundColor(Color(NSColor.secondaryLabelColor))
-                    .toggleStyle(CheckboxToggleStyle())
-                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 8, trailing: 8))
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    WindowAlwaysOnTopSidebarToggle()
+                }
+                .frame(minWidth: 180, idealWidth: 250)
+                .layoutPriority(2)
+                .toolbar {
+                    ToggleSidebarToolbarItem()
+                }
+                .searchable(text: $searchFilter.searchText, placement: .sidebar) /*{
+                    // Suggestions go here
+                    Text("Banarne")
+                        .searchCompletion("Banarne")
+                }*/
+                .navigationTitle("Bootstrapp")
             }
+            
             NoTemplatesView()
         }
+
     }
 }

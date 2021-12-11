@@ -8,10 +8,7 @@ import Splash
 
 extension TemplateView {
     
-    func makeMarkinStyle() -> MarkinStyle {
-        
-        //let codeTheme = Splash.Theme.sundellsColors(withFont: Splash.Font(size: 13))
-        let codeTheme = Splash.Theme.bootstrapp()
+    func makeMarkinStyle(codeTheme: Splash.Theme) -> MarkinStyle {
         
         return MarkinStyle(
             spacing: 16,
@@ -51,7 +48,7 @@ extension TemplateView {
 
 extension Splash.Theme {
     
-    static func bootstrapp() -> Theme {
+    static func bootstrappLight() -> Theme {
         return Theme(
             font: Font(size: 13),
             plainTextColor: NSColor(srgbRed: 0.2, green: 0.2, blue: 0.2, alpha: 1),
@@ -68,5 +65,9 @@ extension Splash.Theme {
             ],
             backgroundColor: NSColor(srgbRed: 0.96, green: 0.96, blue: 0.96, alpha: 1)
         )
+    }
+    
+    static func bootstrappDark() -> Theme {
+        return .midnight(withFont: Font(size: 13))
     }
 }

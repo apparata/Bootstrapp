@@ -8,15 +8,22 @@ import Markin
 
 struct TemplateView: View {
     
-    let templateViewModel: TemplateViewModel
+    let templateModel: TemplateModel
     
     var template: BootstrappTemplate {
-        templateViewModel.template
+        templateModel.template
     }
     
     @ObservedObject var parameterStore: ParameterStore
     
     @State private var showingInvalidInputSheet: Bool = false
+    
+    @Environment(\.colorScheme) private var colorScheme
+    
+    init(template: TemplateModel) {
+        templateModel = template
+        parameterStore = ParameterStore(specification: templateModel.specification)
+    }
     
     var body: some View {
         ZStack {
@@ -36,7 +43,7 @@ struct TemplateView: View {
                             .padding(.top, 2)
                             .padding(.bottom, 12)
                             .lineSpacing(2)
-                    }.padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+                    }.padding(EdgeInsets(top: 20, leading: 40, bottom: 0, trailing: 40))
 
                     TemplatePreview(template: template)
                         .padding(.top, 6)
@@ -48,7 +55,7 @@ struct TemplateView: View {
                             .padding(.bottom, 16)
                         
                         template.document.map {
-                            return MarkinDocumentView(element: $0, style: makeMarkinStyle())
+                            return MarkinDocumentView(element: $0, style: makeMarkinStyle(codeTheme: colorScheme == .dark ? .bootstrappDark() : .bootstrappLight()))
                         }
                         
                     }.padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
@@ -56,22 +63,28 @@ struct TemplateView: View {
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 40, trailing: 0))
             }.padding(.top, 1)
         }
-        .onReceive(NotificationCenter.default.publisher(for: .toolbarMakeAction)) { _ in
-            if validateParameters(parameterStore) {
-                showingInvalidInputSheet = false
-                bootstrapp(template: template, parameterStore: parameterStore)
-            } else {
-                showingInvalidInputSheet = true
-            }
-        }
         .sheet(isPresented: $showingInvalidInputSheet) {
             InvalidInputSheet(showingSheet: $showingInvalidInputSheet)
         }
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    makeAction()
+                } label: {
+                    Image(systemName: "hammer.fill")
+                }
+            }
+        }
+        .navigationSubtitle(templateModel.id)
     }
-    
-    init(template: TemplateViewModel) {
-        templateViewModel = template
-        parameterStore = ParameterStore(template: template.template)
+
+    private func makeAction() {
+        if validateParameters(parameterStore) {
+            showingInvalidInputSheet = false
+            bootstrapp(template: template, parameterStore: parameterStore)
+        } else {
+            showingInvalidInputSheet = true
+        }
     }
 }
 
@@ -155,9 +168,9 @@ class ParameterStore: ObservableObject {
     
     @Published var parameters: [ParameterAndValue]
     
-    init(template: BootstrappTemplate) {
+    init(specification: BootstrappSpecification) {
         var parameters: [ParameterAndValue] = []
-        for parameter in template.specification.parameters {
+        for parameter in specification.parameters {
             switch parameter.type {
             case .string:
                 parameters.append(ParameterAndValue(parameter: parameter, value: ParameterValue(stringValue: parameter.defaultStringValue)))

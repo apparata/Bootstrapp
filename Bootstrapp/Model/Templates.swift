@@ -4,24 +4,86 @@ import BootstrappKit
 import Markin
 import SwiftUI
 import Combine
+import SystemKit
 
 public class Templates: ObservableObject {
-    
-    public var objectWillChange = PassthroughSubject<Void, Never>()
-    
-    var templates = Set<BootstrappTemplate>()
+        
+    @Published var templates = Set<BootstrappTemplate>()
     
     var sortedTemplates: [BootstrappTemplate] {
         Array(templates).sorted(by: \.specification.id)
     }
     
-    public init() {
+    private var changeStream: FileEventStream?
+    
+    private var changeSubscription: AnyCancellable?
+    
+    private var bookmark: URL?
+    
+    public init?(url: URL) {
+        do {
+            try loadTemplates(at: url)
+            monitorChanges(at: url)
+        } catch {
+            dump(error)
+            return nil
+        }
     }
     
-    func addTemplate(at url: URL) throws {
+    public init?(bookmarkID: String) {
+        do {
+            guard let url = try URL.restoreFromBookmark(id: bookmarkID) else {
+                return nil
+            }
+            bookmark = url
+            url.startAccessingBookmarkedURL()
+            do {
+                try loadTemplates(at: url)
+            } catch {
+                dump(error)
+                bookmark = nil
+                url.stopAccessingBookmarkedURL()
+            }
+            monitorChanges(at: url)
+        } catch {
+            dump(error)
+            return nil
+        }
+    }
+    
+    deinit {
+        if let url = bookmark {
+            url.stopAccessingBookmarkedURL()
+        }
+    }
+    
+    private func monitorChanges(at url: URL) {
+        do {
+            let fileEventStream = try FileEventStream(paths: [url.path])
+            changeSubscription = fileEventStream
+                .sink { [weak self] event in
+                    do {
+                        try self?.loadTemplates(at: url)
+                    } catch {
+                        dump(error)
+                    }
+                }
+            changeStream = fileEventStream
+        } catch {
+            dump(error)
+        }
+    }
+    
+    private func loadTemplates(at url: URL) throws {
+        
         let path = BootstrappKit.Path(url.path)
+        
         var bootstrappTemplates = Set<BootstrappTemplate>()
+        
+        // A template is loaded by its Bootstrapp.json file.
+        
         if path.isDirectory {
+            // This is a directory, let's try to find all templates in it.
             let subpaths = try path.recursiveContentsOfDirectory()
             for subpath in subpaths {
                 if !subpath.isDirectory && subpath.lastComponent == "Bootstrapp.json" {
@@ -30,17 +92,9 @@ public class Templates: ObservableObject {
                     bootstrappTemplates.insert(template)
                 }
             }
-        } else if path.lastComponent == "Bootstrapp.json" {
-            let template = try Self.loadTemplate(at: url)
-            bootstrappTemplates.insert(template)
-        } else {
-            return
         }
         
-        DispatchQueue.main.async {
-            self.templates.formUnion(bootstrappTemplates)
-            self.objectWillChange.send(())
-        }
+        self.templates = bootstrappTemplates
     }
     
     private static func loadTemplate(at url: URL) throws -> BootstrappTemplate {

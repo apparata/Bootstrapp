@@ -8,9 +8,8 @@ import BootstrappKit
 
 struct MainView: View {
     
-    var templates: Templates
-    
-    var mainWindowState: MainWindowState
+    @EnvironmentObject var mainWindowState: MainWindowState
+    @EnvironmentObject var templates: TemplatesModel
         
     var body: some View {
         MainSplitView()
@@ -36,10 +35,11 @@ extension MainView: DropDelegate {
         
         let itemProviders = info.itemProviders(for: [UTType.fileURL])
 
-        guard itemProviders.count > 0 else {
+        guard itemProviders.count == 1 else {
+            // We want exactly one template root folder to be dropped.
             return false
         }
-
+        
         for itemProvider in itemProviders {
                         
             itemProvider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, error in
@@ -55,11 +55,7 @@ extension MainView: DropDelegate {
                 }
                 
                 DispatchQueue.global().async {
-                    do {
-                        try self.templates.addTemplate(at: url)
-                    } catch {
-                        dump(error)
-                    }
+                    templates.setTemplateRootFolder(at: url)
                 }
             }
         }

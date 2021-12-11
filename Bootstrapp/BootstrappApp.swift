@@ -9,19 +9,32 @@ struct BootstrappApp: App {
 
     // swiftlint:disable:next weak_delegate
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
-    @StateObject var windowState = MainWindowState(window: nil)
-    
-    @StateObject var templates = Templates()
+            
+    @StateObject var templates = TemplatesModel()
 
     var body: some Scene {
+        
         WindowGroup {
-            MainView(templates: templates, mainWindowState: windowState)
+            MainView()
                 .frame(minWidth: 900, minHeight: 500)
                 .edgesIgnoringSafeArea(.all)
                 .coordinateSpace(name: "HoverSpace")
-                .environmentObject(windowState)
-                .environmentObject(TemplatesViewModel(templates: templates))
+                .environmentObject(MainWindowState())
+                .environmentObject(templates)
+        }
+        .commands {
+            SidebarCommands()
+            TemplateCommands(templates: templates)
+            AboutCommand {
+                appDelegate.showAboutWindow()
+            }
+
+            // Remove the "New Window" option from the File menu.
+            CommandGroup(replacing: .newItem, addition: { })
+        }
+        
+        Settings {
+            SettingsView()
         }
     }
 }
@@ -30,12 +43,24 @@ struct BootstrappApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        NSWindow.allowsAutomaticWindowTabbing = false
+    }
+    
+    func applicationWillTerminate(_ notification: Notification) {
+        // Stop any stuff that needs to be stopped.
+    }
+    
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
     
-    #warning("What about the About window?")
-    //@IBAction func showAboutWindow(_ sender: AnyObject?) {
-    //    AboutWindowController().window?.makeKeyAndOrderFront(nil)
-    //}
+    func showAboutWindow() {
+        AboutWindowController().window?.makeKeyAndOrderFront(nil)
+    }
+    
+    /// Show settings programmatically
+    func showSettings() {
+        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+    }
 }

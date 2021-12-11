@@ -39,19 +39,12 @@ class AboutWindowController: NSWindowController {
     }
 
     private func makeAboutView() -> some View {
-        
-        let icon = NSApp.applicationIconImage ?? NSImage()
-        let info = Bundle.main.infoDictionary
-        let name = info?["CFBundleName"] as? String ?? "Bootstrapp"
-        let version = info?["CFBundleShortVersionString"] as? String ?? "?.?.?"
-        let build = info?["CFBundleVersion"] as? String ?? "?"
-        let copyright = info?["NSHumanReadableCopyright"] as? String ?? "Copyright © 2019 Apparata AB"
-        
-        return AboutView(icon: icon,
-                         name: name,
-                         version: version,
-                         build: build,
-                         copyright: copyright)
+                
+        return AboutView(icon: NSApp.applicationIconImage ?? NSImage(),
+                         name: Bundle.main.name,
+                         version: Bundle.main.version,
+                         build: Bundle.main.buildVersion,
+                         copyright: Bundle.main.copyright)
             .frame(width: 500, height: 260)
     }
 }

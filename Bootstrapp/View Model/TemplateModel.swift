@@ -6,7 +6,7 @@ import Foundation
 import SwiftUIToolbox
 import BootstrappKit
 
-struct TemplateViewModel: Identifiable, Hashable, SearchFilterable {
+struct TemplateModel: Identifiable, Hashable, SearchFilterable {
     
     var id: String {
         template.id
@@ -29,6 +29,10 @@ struct TemplateViewModel: Identifiable, Hashable, SearchFilterable {
         }
     }
     
+    var specification: BootstrappSpecification {
+        template.specification
+    }
+    
     var template: BootstrappTemplate
     
     init(template: BootstrappTemplate) {
@@ -43,7 +47,7 @@ struct TemplateViewModel: Identifiable, Hashable, SearchFilterable {
         hasher.combine(id)
     }
     
-    static func == (lhs: TemplateViewModel, rhs: TemplateViewModel) -> Bool {
+    static func == (lhs: TemplateModel, rhs: TemplateModel) -> Bool {
         lhs.id == rhs.id
     }
 }
