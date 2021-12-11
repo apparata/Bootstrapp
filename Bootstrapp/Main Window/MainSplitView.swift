@@ -30,7 +30,7 @@ struct MainSplitView: View {
                 List(selection: $templatesViewModel.templateSelection) {
                     ForEach(templatesViewModel.templatesByCategory.keys.sorted(), id: \.self) { category in
                         Section(header: Text(category)) {
-                            ForEach(self.searchFilter.apply(to: self.templatesViewModel.templates(by: category))) { template in
+                            ForEach(searchFilter.apply(to: templatesViewModel.templates(by: category))) { template in
                                 NavigationLink(destination: ZStack {
                                         TemplateView(template: template)
                                     }

@@ -57,20 +57,20 @@ struct TemplateView: View {
             }.padding(.top, 1)
         }
         .onReceive(NotificationCenter.default.publisher(for: .toolbarMakeAction)) { _ in
-            if self.validateParameters(self.parameterStore) {
-                self.showingInvalidInputSheet = false
-                self.bootstrapp(template: self.template, parameterStore: self.parameterStore)
+            if validateParameters(parameterStore) {
+                showingInvalidInputSheet = false
+                bootstrapp(template: template, parameterStore: parameterStore)
             } else {
-                self.showingInvalidInputSheet = true
+                showingInvalidInputSheet = true
             }
         }
         .sheet(isPresented: $showingInvalidInputSheet) {
-            InvalidInputSheet(showingSheet: self.$showingInvalidInputSheet)
+            InvalidInputSheet(showingSheet: $showingInvalidInputSheet)
         }
     }
     
     init(template: TemplateViewModel) {
-        self.templateViewModel = template
+        templateViewModel = template
         parameterStore = ParameterStore(template: template.template)
     }
 }

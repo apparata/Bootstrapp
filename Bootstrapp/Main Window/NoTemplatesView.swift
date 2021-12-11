@@ -27,7 +27,6 @@ struct NoTemplatesView: View {
                     : "Add templates to get started. Just drag them from Finder to this window.")
                     .font(.system(size: 15))
                     .frame(width: 280)
-                    .animation(.none)
                     .padding(.bottom, 20)
                 ZStack {
                     ZStack {
@@ -55,20 +54,20 @@ struct NoTemplatesView: View {
                     GeometryReader { proxy in
                         VStack {
                             Text("Anywhere here is fine.")
-                                .foregroundColor(self.dropTargetForeground)
+                                .foregroundColor(dropTargetForeground)
                             ZStack {
                                 Circle()
-                                    .foregroundColor(self.dropTargetBackground)
+                                    .foregroundColor(dropTargetBackground)
                                     .frame(width: 100, height: 100)
                                 Circle()
-                                    .strokeBorder(self.dropTargetBorder, style: StrokeStyle(lineWidth: 2, dash: [8, 4], dashPhase: 9))
+                                    .strokeBorder(dropTargetBorder, style: StrokeStyle(lineWidth: 2, dash: [8, 4], dashPhase: 9))
                                     .frame(width: 100, height: 100)
                             }
                         }
-                        .scaleEffect(self.mainWindowState.isHoveringOverDropZone ? 1 : 0.01, anchor: UnitPoint(x: 0.5, y: 0.7))
-                        .offset(self.calculateDropOffset(geometryProxy: proxy))
-                        .opacity(self.mainWindowState.isHoveringOverDropZone ? 1 : 0)
-                        .animation(self.mainWindowState.isHoveringOverDropZone ? .none : .easeInOut)
+                        .scaleEffect(mainWindowState.isHoveringOverDropZone ? 1 : 0.01, anchor: UnitPoint(x: 0.5, y: 0.7))
+                        .offset(calculateDropOffset(geometryProxy: proxy))
+                        .opacity(mainWindowState.isHoveringOverDropZone ? 1 : 0)
+                        .animation(mainWindowState.isHoveringOverDropZone ? .none : .easeInOut, value: mainWindowState.isHoveringOverDropZone)
                     }
 
                 }.frame(width: 280, height: 140)

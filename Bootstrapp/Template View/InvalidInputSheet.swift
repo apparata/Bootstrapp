@@ -17,7 +17,7 @@ struct InvalidInputSheet: View {
             HStack {
                 Spacer()
                 MacButton(title: "OK", keyEquivalent: .carriageReturn) {
-                    self.showingSheet = false
+                    showingSheet = false
                 }
             }
             .padding(.top, 14)

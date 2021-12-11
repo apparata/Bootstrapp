@@ -533,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = se.apparata.Bootstrapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,7 +560,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = se.apparata.Bootstrapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -597,24 +597,24 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apparata/SwiftUIToolbox.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				kind = exactVersion;
+				version = 0.5.0;
 			};
 		};
 		5B875321238928E8007C9267 /* XCRemoteSwiftPackageReference "Splash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/Splash.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
+				kind = exactVersion;
+				version = 0.16.0;
 			};
 		};
 		5BCD3A6F239D9297004A811A /* XCRemoteSwiftPackageReference "BootstrappKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apparata/BootstrappKit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				kind = exactVersion;
+				version = 0.0.8;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

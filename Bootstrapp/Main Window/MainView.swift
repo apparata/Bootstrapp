@@ -3,6 +3,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 import BootstrappKit
 
 struct MainView: View {
@@ -14,7 +15,7 @@ struct MainView: View {
     var body: some View {
         MainSplitView()
             .layoutPriority(1.0)
-            .onDrop(of: [(kUTTypeFileURL as String)], delegate: self)
+            .onDrop(of: [UTType.fileURL], delegate: self)
     }
 }
 
@@ -33,15 +34,15 @@ extension MainView: DropDelegate {
     /// Return `true` if the drop was successful, `false` otherwise.
     func performDrop(info: DropInfo) -> Bool {
         
-        let itemProviders = info.itemProviders(for: [(kUTTypeFileURL as String)])
+        let itemProviders = info.itemProviders(for: [UTType.fileURL])
 
         guard itemProviders.count > 0 else {
             return false
         }
 
         for itemProvider in itemProviders {
-
-            itemProvider.loadItem(forTypeIdentifier: (kUTTypeFileURL as String), options: nil) { item, error in
+                        
+            itemProvider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, error in
                             
                 guard let data = item as? Data else {
                     dump(error)

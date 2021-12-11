@@ -30,37 +30,37 @@ struct TemplateParametersForm: View {
                 ForEach(parameterStore.parameters.indices) { index in
                     
                     HStack {
-                        Text(self.parameterStore.parameters[index].parameter.name)
+                        Text(parameterStore.parameters[index].parameter.name)
                             .alignmentGuide(.formFieldAlignmentGuide) { d in d[.trailing] }
-                        if self.parameterStore.parameters[index].parameter.type == .string {
+                        if parameterStore.parameters[index].parameter.type == .string {
                             TextField(
-                                "\(self.parameterStore.parameters[index].parameter.type.rawValue) (\(self.parameterStore.parameters[index].parameter.validationRegex?.pattern ?? ".*"))",
-                                text: self.$parameterStore.parameters[index].value.stringValue,
+                                "\(parameterStore.parameters[index].parameter.type.rawValue) (\(parameterStore.parameters[index].parameter.validationRegex?.pattern ?? ".*"))",
+                                text: $parameterStore.parameters[index].value.stringValue,
                                 onCommit: { print("Commit!") })
                                 .border(SeparatorShapeStyle(), width: 2)
                                 .frame(width: 300)
-                            if self.okToAnimate {
-                                CheckmarkView(isChecked: self.isParameterValid(self.parameterStore.parameters[index].parameter,
-                                              input: self.parameterStore.parameters[index].value.stringValue))
+                            if okToAnimate {
+                                CheckmarkView(isChecked: isParameterValid(parameterStore.parameters[index].parameter,
+                                              input: parameterStore.parameters[index].value.stringValue))
                                     .frame(width: 10, height: 10)
                                     .padding(.leading, 2)
                             }
                             
-                        } else if self.parameterStore.parameters[index].parameter.type == .bool {
-                            Toggle("", isOn: self.$parameterStore.parameters[index].value.boolValue)
+                        } else if parameterStore.parameters[index].parameter.type == .bool {
+                            Toggle("", isOn: $parameterStore.parameters[index].value.boolValue)
                                 .foregroundColor(Color(NSColor.secondaryLabelColor))
                                 .toggleStyle(CheckboxToggleStyle())
                             
-                        } else if self.parameterStore.parameters[index].parameter.type == .option {
-                            Picker(selection: self.$parameterStore.parameters[index].value.optionValue, label: EmptyView()) {
-                                ForEach(0 ..< self.parameterStore.parameters[index].parameter.options.count, id: \.self) {
-                                    Text(self.parameterStore.parameters[index].parameter.options[$0])
+                        } else if parameterStore.parameters[index].parameter.type == .option {
+                            Picker(selection: $parameterStore.parameters[index].value.optionValue, label: EmptyView()) {
+                                ForEach(0 ..< parameterStore.parameters[index].parameter.options.count, id: \.self) {
+                                    Text(parameterStore.parameters[index].parameter.options[$0])
                                 }
                             }.pickerStyle(PopUpButtonPickerStyle())
                                 .frame(width: 300)
                         }
-                    }.onAppear() {
-                        self.okToAnimate = true
+                    }.onAppear {
+                        okToAnimate = true
                     }
 
                 }
@@ -83,7 +83,7 @@ struct CheckmarkView: View {
             .trim(from: 0, to: isChecked ? 1 : 0)
             .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
             .foregroundColor(Color.green)
-            .animation(Animation.easeInOut(duration: 0.5))
+            .animation(Animation.easeInOut(duration: 0.5), value: isChecked)
     }
 }
 
