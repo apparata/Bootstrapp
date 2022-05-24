@@ -144,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				5B66E4CC237DA8C200E7D0B9 /* Bootstrapp */,
-				5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.11.0 */,
+				5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.29.0 */,
 				5B66E4CB237DA8C200E7D0B9 /* Products */,
 				5B66E4E2237DC8F600E7D0B9 /* Frameworks */,
 			);
@@ -318,12 +318,12 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
-		5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.11.0 */ = {
+		5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.29.0 */ = {
 			isa = PBXGroup;
 			children = (
 				5BEC048E238F1E8600A72DBE /* SettingPresets */,
 			);
-			name = "Settings Presets from XcodeGen 2.11.0";
+			name = "Settings Presets from XcodeGen 2.29.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -691,7 +691,7 @@
 			repositoryURL = "https://github.com/apparata/BootstrappKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.0.8;
+				version = 0.0.9;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
