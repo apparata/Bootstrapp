@@ -27,34 +27,34 @@ struct TemplateParametersForm: View {
         VStack(alignment: .leading) {
             Text("Parameters").font(.subheadline).bold()
             VStack(alignment: .formFieldAlignmentGuide) {
-                ForEach(parameterStore.parameters.indices) { index in
+                ForEach($parameterStore.parameters) { $parameter in
                     
                     HStack {
-                        Text(parameterStore.parameters[index].parameter.name)
+                        Text(parameter.parameter.name)
                             .alignmentGuide(.formFieldAlignmentGuide) { d in d[.trailing] }
-                        if parameterStore.parameters[index].parameter.type == .string {
+                        if parameter.parameter.type == .string {
                             TextField(
-                                "\(parameterStore.parameters[index].parameter.type.rawValue) (\(parameterStore.parameters[index].parameter.validationRegex?.pattern ?? ".*"))",
-                                text: $parameterStore.parameters[index].value.stringValue,
+                                "\(parameter.parameter.type.rawValue) (\(parameter.parameter.validationRegex?.pattern ?? ".*"))",
+                                text: $parameter.value.stringValue,
                                 onCommit: { print("Commit!") })
                                 .border(SeparatorShapeStyle(), width: 2)
                                 .frame(width: 300)
                             if okToAnimate {
-                                CheckmarkView(isChecked: isParameterValid(parameterStore.parameters[index].parameter,
-                                              input: parameterStore.parameters[index].value.stringValue))
+                                CheckmarkView(isChecked: isParameterValid(parameter.parameter,
+                                              input: parameter.value.stringValue))
                                     .frame(width: 10, height: 10)
                                     .padding(.leading, 2)
                             }
                             
-                        } else if parameterStore.parameters[index].parameter.type == .bool {
-                            Toggle("", isOn: $parameterStore.parameters[index].value.boolValue)
+                        } else if parameter.parameter.type == .bool {
+                            Toggle("", isOn: $parameter.value.boolValue)
                                 .foregroundColor(Color(NSColor.secondaryLabelColor))
                                 .toggleStyle(CheckboxToggleStyle())
                             
-                        } else if parameterStore.parameters[index].parameter.type == .option {
-                            Picker(selection: $parameterStore.parameters[index].value.optionValue, label: EmptyView()) {
-                                ForEach(0 ..< parameterStore.parameters[index].parameter.options.count, id: \.self) {
-                                    Text(parameterStore.parameters[index].parameter.options[$0])
+                        } else if parameter.parameter.type == .option {
+                            Picker(selection: $parameter.value.optionValue, label: EmptyView()) {
+                                ForEach(0 ..< parameter.parameter.options.count, id: \.self) {
+                                    Text(parameter.parameter.options[$0])
                                 }
                             }.pickerStyle(PopUpButtonPickerStyle())
                                 .frame(width: 300)

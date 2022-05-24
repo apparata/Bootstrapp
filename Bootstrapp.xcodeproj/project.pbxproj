@@ -58,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419B7806283D8B0300B6044D /* BootstrappKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BootstrappKit; path = ../../../Frameworks/BootstrappKit; sourceTree = "<group>"; };
 		5B16763E2399925D00B242C2 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		5B1676402399928B00B242C2 /* MainSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSidebarView.swift; sourceTree = "<group>"; };
 		5B1676562399BC8900B242C2 /* TemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesModel.swift; sourceTree = "<group>"; };
@@ -122,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		419B7805283D8AE700B6044D /* Local Packages */ = {
+			isa = PBXGroup;
+			children = (
+				419B7806283D8B0300B6044D /* BootstrappKit */,
+			);
+			name = "Local Packages";
+			sourceTree = "<group>";
+		};
 		5B16763D2399924900B242C2 /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +185,7 @@
 				5B66E4DA237DA8C400E7D0B9 /* Bootstrapp.entitlements */,
 				5B8AFE05239D41AA00752574 /* ATTRIBUTIONS */,
 				5B66E4D3237DA8C400E7D0B9 /* Preview Content */,
+				419B7805283D8AE700B6044D /* Local Packages */,
 			);
 			path = Bootstrapp;
 			sourceTree = "<group>";

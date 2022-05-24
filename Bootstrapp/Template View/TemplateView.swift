@@ -158,8 +158,8 @@ struct ParameterValue {
     }
 }
 
-struct ParameterAndValue {
-
+struct ParameterAndValue: Identifiable {
+    var id: String { parameter.id }
     let parameter: BootstrappParameter
     var value: ParameterValue
 }
