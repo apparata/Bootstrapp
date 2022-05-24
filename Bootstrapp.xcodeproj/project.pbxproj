@@ -14,7 +14,6 @@
 		5B66E4D0237DA8C200E7D0B9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4CF237DA8C200E7D0B9 /* MainView.swift */; };
 		5B66E4D2237DA8C400E7D0B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */; };
 		5B66E4D5237DA8C400E7D0B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B66E4D4237DA8C400E7D0B9 /* Preview Assets.xcassets */; };
-		5B66E4E4237DC8F600E7D0B9 /* BootstrappKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5B66E4E3237DC8F600E7D0B9 /* BootstrappKit */; };
 		5B66E4EF237DCA6C00E7D0B9 /* Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4EE237DCA6C00E7D0B9 /* Templates.swift */; };
 		5B66E4F5237DCF5600E7D0B9 /* MainSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4F4237DCF5600E7D0B9 /* MainSplitView.swift */; };
 		5B66E4F7237DCF6100E7D0B9 /* SidebarSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66E4F6237DCF6100E7D0B9 /* SidebarSearchField.swift */; };
@@ -58,7 +57,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		419B7806283D8B0300B6044D /* BootstrappKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BootstrappKit; path = ../../../Frameworks/BootstrappKit; sourceTree = "<group>"; };
 		5B16763E2399925D00B242C2 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		5B1676402399928B00B242C2 /* MainSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSidebarView.swift; sourceTree = "<group>"; };
 		5B1676562399BC8900B242C2 /* TemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesModel.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B66E4E4237DC8F600E7D0B9 /* BootstrappKit in Frameworks */,
 				5BCA94882764C907003AFC4D /* SystemKit in Frameworks */,
 				5B87530923846E6B007C9267 /* SwiftUIToolbox in Frameworks */,
 				5B875323238928E8007C9267 /* Splash in Frameworks */,
@@ -126,7 +123,6 @@
 		419B7805283D8AE700B6044D /* Local Packages */ = {
 			isa = PBXGroup;
 			children = (
-				419B7806283D8B0300B6044D /* BootstrappKit */,
 			);
 			name = "Local Packages";
 			sourceTree = "<group>";
@@ -355,7 +351,6 @@
 			);
 			name = Bootstrapp;
 			packageProductDependencies = (
-				5B66E4E3237DC8F600E7D0B9 /* BootstrappKit */,
 				5B87530823846E6B007C9267 /* SwiftUIToolbox */,
 				5B875322238928E8007C9267 /* Splash */,
 				5BCD3A70239D9297004A811A /* BootstrappKit */,
@@ -707,10 +702,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B66E4E3237DC8F600E7D0B9 /* BootstrappKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BootstrappKit;
-		};
 		5B66E4E7237DC8FE00E7D0B9 /* BootstrappKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BootstrappKit;
