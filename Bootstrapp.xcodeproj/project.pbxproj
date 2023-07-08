@@ -672,7 +672,7 @@
 			repositoryURL = "https://github.com/apparata/SwiftUIToolbox.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.7.1;
+				version = 0.7.6;
 			};
 		};
 		5B875321238928E8007C9267 /* XCRemoteSwiftPackageReference "Splash" */ = {
@@ -696,7 +696,7 @@
 			repositoryURL = "https://github.com/apparata/BootstrappKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.0.9;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

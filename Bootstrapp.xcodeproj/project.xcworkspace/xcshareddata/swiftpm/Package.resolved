@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/BootstrappKit.git",
       "state" : {
-        "revision" : "cbc78b5d19b03bf084b8b4be0740c28362ee6088",
-        "version" : "0.0.9"
+        "revision" : "dfd00349f03abf582abdb9c4c8335fd5df47ce72",
+        "version" : "1.0.0"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/SwiftUIToolbox.git",
       "state" : {
-        "revision" : "d5e4d75514ee86ff9b3541a64a85da72213c0f60",
-        "version" : "0.7.1"
+        "revision" : "0c2030bc2c4303e02e7b7b29fe2e01339703dbd2",
+        "version" : "0.7.6"
       }
     },
     {
@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yonaskolb/XcodeGen.git",
       "state" : {
-        "revision" : "29bcb9259136f04781ef5d736471f01357e43b04",
-        "version" : "2.29.0"
+        "revision" : "aa7fed0f5b1e4d3701bfa6ff842f44e3f3089d90",
+        "version" : "2.34.0"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tuist/XcodeProj.git",
       "state" : {
-        "revision" : "c75c3acc25460195cfd203a04dde165395bf00e0",
-        "version" : "8.7.1"
+        "revision" : "c4d5f9d7f789dd944222be95938810947561e559",
+        "version" : "8.12.0"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jpsim/Yams.git",
       "state" : {
-        "revision" : "9ff1cc9327586db4e0c8f46f064b6a82ec1566fa",
-        "version" : "4.0.6"
+        "revision" : "0d9ee7ea8c4ebd4a489ad7a73d5c6cad55d6fed3",
+        "version" : "5.0.6"
       }
     }
   ],
