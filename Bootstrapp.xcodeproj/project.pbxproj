@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				5B66E4CC237DA8C200E7D0B9 /* Bootstrapp */,
-				5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.29.0 */,
+				5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.34.0 */,
 				5B66E4CB237DA8C200E7D0B9 /* Products */,
 				5B66E4E2237DC8F600E7D0B9 /* Frameworks */,
 			);
@@ -324,12 +324,12 @@
 			path = Mac;
 			sourceTree = "<group>";
 		};
-		5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.29.0 */ = {
+		5BEC0490238F202F00A72DBE /* Settings Presets from XcodeGen 2.34.0 */ = {
 			isa = PBXGroup;
 			children = (
 				5BEC048E238F1E8600A72DBE /* SettingPresets */,
 			);
-			name = "Settings Presets from XcodeGen 2.29.0";
+			name = "Settings Presets from XcodeGen 2.34.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,8 +366,9 @@
 		5B66E4C2237DA8C200E7D0B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Apparata AB";
 				TargetAttributes = {
 					5B66E4C9237DA8C200E7D0B9 = {
@@ -508,6 +509,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -569,6 +571,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -598,6 +601,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Bootstrapp/Preview Content\"";
 				DEVELOPMENT_TEAM = DR5YAK7GKS;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -625,6 +629,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 11;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Bootstrapp/Preview Content\"";
 				DEVELOPMENT_TEAM = DR5YAK7GKS;
 				ENABLE_HARDENED_RUNTIME = YES;
