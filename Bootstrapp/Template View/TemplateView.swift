@@ -18,6 +18,8 @@ struct TemplateView: View {
     
     @State private var showingInvalidInputSheet: Bool = false
     
+    @State private var openIn: OpenIn = .finder
+    
     @Environment(\.colorScheme) private var colorScheme
     
     init(template: TemplateModel) {
@@ -67,6 +69,15 @@ struct TemplateView: View {
             InvalidInputSheet(showingSheet: $showingInvalidInputSheet)
         }
         .toolbar {
+            if case .xcodeProject = template.specification.type {
+                ToolbarItem {
+                    Picker("", selection: $openIn) {
+                        Text("Open in Finder").tag(OpenIn.finder)
+                        Text("Open in Xcode").tag(OpenIn.Xcode)
+                    }
+                    .labelsHidden()
+                }
+            }
             ToolbarItem {
                 Button {
                     makeAction()
@@ -81,7 +92,7 @@ struct TemplateView: View {
     private func makeAction() {
         if validateParameters(parameterStore) {
             showingInvalidInputSheet = false
-            bootstrapp(template: template, parameterStore: parameterStore)
+            bootstrapp(template: template, parameterStore: parameterStore, openIn: openIn)
         } else {
             showingInvalidInputSheet = true
         }
@@ -113,7 +124,7 @@ private extension TemplateView {
         return true
     }
     
-    func bootstrapp(template: BootstrappTemplate, parameterStore: ParameterStore) {
+    func bootstrapp(template: BootstrappTemplate, parameterStore: ParameterStore, openIn: OpenIn) {
         
         DispatchQueue.global().async {
             
@@ -134,7 +145,10 @@ private extension TemplateView {
             
             let bootstrapp = Bootstrapp(template: template, parameters: parametersWithValues)
             do {
-                let outputPath = try bootstrapp.instantiateTemplate()
+                var outputPath = try bootstrapp.instantiateTemplate()
+                if openIn == .finder, outputPath.url.pathExtension == "xcodeproj" {
+                    outputPath = outputPath.deletingLastComponent
+                }
                 DispatchQueue.main.async {
                     NSWorkspace.shared.open(outputPath.url)
                 }
@@ -182,4 +196,11 @@ class ParameterStore: ObservableObject {
         }
         self.parameters = parameters
     }
+}
+
+enum OpenIn: Identifiable {
+    case finder
+    case Xcode
+    
+    var id: Self { self }
 }
