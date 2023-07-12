@@ -3,8 +3,6 @@
 
 The main purpose of the Bootstrapp application for macOS is to generate boilerplate for iOS and macOS apps and Swift packages from templates. However, the template system is general enough for just about any type of boilerplate generation.
 
-> ⚠️ **Note:** Bootstrapp is still in the early stages of development.
-
 ![Bootstrapp main window](docs/images/ShoeboxMacApp.png?raw=true)
 
 ## License
