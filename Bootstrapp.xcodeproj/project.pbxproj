@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		419279752A8C0A1E00D6FEC9 /* AddPackageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */; };
+		41F446182A8BFE630068C630 /* TemplatePackagesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */; };
+		41F4461A2A8C03180068C630 /* ParameterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446192A8C03180068C630 /* ParameterStore.swift */; };
+		41F4461E2A8C036C0068C630 /* PackageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4461D2A8C036C0068C630 /* PackageStore.swift */; };
 		5B16763F2399925D00B242C2 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16763E2399925D00B242C2 /* MainContentView.swift */; };
 		5B1676412399928B00B242C2 /* MainSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676402399928B00B242C2 /* MainSidebarView.swift */; };
 		5B1676572399BC8900B242C2 /* TemplatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1676562399BC8900B242C2 /* TemplatesModel.swift */; };
@@ -57,6 +61,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPackageSheet.swift; sourceTree = "<group>"; };
+		41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePackagesForm.swift; sourceTree = "<group>"; };
+		41F446192A8C03180068C630 /* ParameterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterStore.swift; sourceTree = "<group>"; };
+		41F4461D2A8C036C0068C630 /* PackageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageStore.swift; sourceTree = "<group>"; };
 		5B16763E2399925D00B242C2 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
 		5B1676402399928B00B242C2 /* MainSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSidebarView.swift; sourceTree = "<group>"; };
 		5B1676562399BC8900B242C2 /* TemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesModel.swift; sourceTree = "<group>"; };
@@ -125,6 +133,25 @@
 			children = (
 			);
 			name = "Local Packages";
+			sourceTree = "<group>";
+		};
+		41F4461B2A8C031B0068C630 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				5B87530F2384A42F007C9267 /* TemplateParametersForm.swift */,
+				41F446192A8C03180068C630 /* ParameterStore.swift */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		41F4461C2A8C03580068C630 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */,
+				41F4461D2A8C036C0068C630 /* PackageStore.swift */,
+				419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 		5B16763D2399924900B242C2 /* Sidebar */ = {
@@ -246,9 +273,10 @@
 		5B66E4FF237DFF4500E7D0B9 /* Template View */ = {
 			isa = PBXGroup;
 			children = (
+				41F4461C2A8C03580068C630 /* Packages */,
+				41F4461B2A8C031B0068C630 /* Parameters */,
 				5B875303238353B6007C9267 /* TemplateView.swift */,
 				5B87530D23849102007C9267 /* TemplatePreview.swift */,
-				5B87530F2384A42F007C9267 /* TemplateParametersForm.swift */,
 				5B87531523874234007C9267 /* InvalidInputSheet.swift */,
 				5B87531F2388B98D007C9267 /* TemplateView+MarkinStyle.swift */,
 				5BCA94A227651270003AFC4D /* TemplateCommands.swift */,
@@ -424,16 +452,19 @@
 				5BCA94A927653CF2003AFC4D /* URL+Bookmark.swift in Sources */,
 				5B66E4D0237DA8C200E7D0B9 /* MainView.swift in Sources */,
 				5BCA94922764D0E1003AFC4D /* Bundle+Name.swift in Sources */,
+				41F446182A8BFE630068C630 /* TemplatePackagesForm.swift in Sources */,
 				5B66E501237E19D500E7D0B9 /* MainWindowState.swift in Sources */,
 				5B87532523892A38007C9267 /* SwiftText.swift in Sources */,
 				5B87531623874234007C9267 /* InvalidInputSheet.swift in Sources */,
 				5B66E4F5237DCF5600E7D0B9 /* MainSplitView.swift in Sources */,
 				5BCA949B2764E2AE003AFC4D /* WindowsAlwaysOnTopSidebarToggle.swift in Sources */,
 				5B8753202388B98D007C9267 /* TemplateView+MarkinStyle.swift in Sources */,
+				41F4461E2A8C036C0068C630 /* PackageStore.swift in Sources */,
 				5B66E4F7237DCF6100E7D0B9 /* SidebarSearchField.swift in Sources */,
 				5B8AFE0F239D559500752574 /* AttributionsWindowController.swift in Sources */,
 				5BCA94A327651270003AFC4D /* TemplateCommands.swift in Sources */,
 				5B1676412399928B00B242C2 /* MainSidebarView.swift in Sources */,
+				419279752A8C0A1E00D6FEC9 /* AddPackageSheet.swift in Sources */,
 				5BCA94A7276521FA003AFC4D /* DropTargetShape.swift in Sources */,
 				5B1676572399BC8900B242C2 /* TemplatesModel.swift in Sources */,
 				5BCA94A02764E908003AFC4D /* ActionNotifications.swift.swift in Sources */,
@@ -456,6 +487,7 @@
 				5BCA94992764D64D003AFC4D /* WindowAccessor.swift in Sources */,
 				5BCA94A52765146C003AFC4D /* AboutCommand.swift in Sources */,
 				5B87531323873662007C9267 /* MacButton.swift in Sources */,
+				41F4461A2A8C03180068C630 /* ParameterStore.swift in Sources */,
 				5B8AFE0A239D458400752574 /* AboutWindowController.swift in Sources */,
 				5B16763F2399925D00B242C2 /* MainContentView.swift in Sources */,
 			);
@@ -701,7 +733,7 @@
 			repositoryURL = "https://github.com/apparata/BootstrappKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.0;
+				version = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

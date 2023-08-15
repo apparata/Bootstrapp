@@ -14,17 +14,19 @@ struct TemplateView: View {
         templateModel.template
     }
     
-    @ObservedObject var parameterStore: ParameterStore
+    @StateObject private var parameterStore: ParameterStore
+    @StateObject private var packageStore: PackageStore
     
     @State private var showingInvalidInputSheet: Bool = false
-    
+
     @State private var openIn: OpenIn = .finder
     
     @Environment(\.colorScheme) private var colorScheme
     
     init(template: TemplateModel) {
         templateModel = template
-        parameterStore = ParameterStore(specification: templateModel.specification)
+        _parameterStore = StateObject(wrappedValue: ParameterStore(specification: template.specification))
+        _packageStore = StateObject(wrappedValue: PackageStore(specification: template.specification))
     }
     
     var body: some View {
@@ -56,6 +58,17 @@ struct TemplateView: View {
                         TemplateParametersForm(template: template, parameterStore: parameterStore)
                             .padding(.bottom, 16)
                         
+                        Divider()
+                            .padding(.bottom, 16)
+                        
+                        if !packageStore.packages.isEmpty {
+                            TemplatePackagesForm(template: template, packageStore: packageStore)
+                                .padding(.bottom, 16)
+                            
+                            Divider()
+                                .padding(.bottom, 16)
+                        }
+                        
                         template.document.map {
                             return MarkinDocumentView(element: $0, style: makeMarkinStyle(codeTheme: colorScheme == .dark ? .bootstrappDark() : .bootstrappLight()))
                         }
@@ -69,21 +82,33 @@ struct TemplateView: View {
             InvalidInputSheet(showingSheet: $showingInvalidInputSheet)
         }
         .toolbar {
-            if case .xcodeProject = template.specification.type {
-                ToolbarItem {
+            ToolbarItemGroup {
+                Button {
+                    withAnimation {
+                        parameterStore.reset()
+                        packageStore.reset()
+                    }
+                } label: {
+                    Label("Reset", systemImage: "trash")
+                }
+                .help("Reset Form")
+                
+                Spacer()
+                Spacer()
+
+                if case .xcodeProject = template.specification.type {
                     Picker("", selection: $openIn) {
                         Text("Open in Finder").tag(OpenIn.finder)
                         Text("Open in Xcode").tag(OpenIn.Xcode)
                     }
                     .labelsHidden()
                 }
-            }
-            ToolbarItem {
                 Button {
                     makeAction()
                 } label: {
-                    Image(systemName: "hammer.fill")
+                    Label("Generate", systemImage: "hammer.fill")
                 }
+                .help("Generate")
             }
         }
         .navigationSubtitle(templateModel.id)
@@ -92,7 +117,11 @@ struct TemplateView: View {
     private func makeAction() {
         if validateParameters(parameterStore) {
             showingInvalidInputSheet = false
-            bootstrapp(template: template, parameterStore: parameterStore, openIn: openIn)
+            bootstrapp(
+                template: template,
+                parameterStore: parameterStore,
+                packageStore: packageStore,
+                openIn: openIn)
         } else {
             showingInvalidInputSheet = true
         }
@@ -124,7 +153,12 @@ private extension TemplateView {
         return true
     }
     
-    func bootstrapp(template: BootstrappTemplate, parameterStore: ParameterStore, openIn: OpenIn) {
+    func bootstrapp(
+        template: BootstrappTemplate,
+        parameterStore: ParameterStore,
+        packageStore: PackageStore,
+        openIn: OpenIn
+    ) {
         
         DispatchQueue.global().async {
             
@@ -143,7 +177,18 @@ private extension TemplateView {
                 }
             }
             
-            let bootstrapp = Bootstrapp(template: template, parameters: parametersWithValues)
+            var packages: [BootstrappPackage] = []
+            for entry in packageStore.packages {
+                packages.append(BootstrappPackage(
+                    name: entry.name,
+                    url: entry.url,
+                    version: entry.version))
+            }
+            
+            let bootstrapp = Bootstrapp(
+                template: template,
+                parameters: parametersWithValues,
+                packages: packages)
             do {
                 var outputPath = try bootstrapp.instantiateTemplate()
                 if openIn == .finder, outputPath.url.pathExtension == "xcodeproj" {
@@ -158,43 +203,6 @@ private extension TemplateView {
             }
             
         }
-    }
-}
-
-struct ParameterValue {
-    var stringValue: String
-    var boolValue: Bool
-    var optionValue: Int
-    init(stringValue: String = "", boolValue: Bool = false, optionValue: Int = 0) {
-        self.stringValue = stringValue
-        self.boolValue = boolValue
-        self.optionValue = 0
-    }
-}
-
-struct ParameterAndValue: Identifiable {
-    var id: String { parameter.id }
-    let parameter: BootstrappParameter
-    var value: ParameterValue
-}
-
-class ParameterStore: ObservableObject {
-    
-    @Published var parameters: [ParameterAndValue]
-    
-    init(specification: BootstrappSpecification) {
-        var parameters: [ParameterAndValue] = []
-        for parameter in specification.parameters {
-            switch parameter.type {
-            case .string:
-                parameters.append(ParameterAndValue(parameter: parameter, value: ParameterValue(stringValue: parameter.defaultStringValue)))
-            case .bool:
-                parameters.append(ParameterAndValue(parameter: parameter, value: ParameterValue(boolValue: parameter.defaultBoolValue)))
-            case .option:
-                parameters.append(ParameterAndValue(parameter: parameter, value: ParameterValue(optionValue: parameter.defaultOptionValue)))
-            }
-        }
-        self.parameters = parameters
     }
 }
 
