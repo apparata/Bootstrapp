@@ -25,7 +25,7 @@ struct TemplateCommands: Commands {
                     templates?.unsetTemplateRootFolder()
                 }
             } label: {
-                Text("Close Template Root Folder", comment: "Close all templates.")
+                Text("Eject Templates", comment: "Close all templates.")
             }
             .keyboardShortcut("K", modifiers: [.command])
         }
