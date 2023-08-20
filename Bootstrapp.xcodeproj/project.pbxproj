@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		415AEF902A9264F40003B332 /* AttributionsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 415AEF8F2A9264F40003B332 /* AttributionsUI */; };
 		415AEF922A9290F00003B332 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF912A9290F00003B332 /* SettingsWindow.swift */; };
+		415AEF952A9297CD0003B332 /* HelpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF942A9297CD0003B332 /* HelpWindow.swift */; };
+		415AEF972A9297FC0003B332 /* HelpCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF962A9297FC0003B332 /* HelpCommands.swift */; };
 		419279752A8C0A1E00D6FEC9 /* AddPackageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */; };
 		41F446182A8BFE630068C630 /* TemplatePackagesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */; };
 		41F4461A2A8C03180068C630 /* ParameterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446192A8C03180068C630 /* ParameterStore.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		415AEF912A9290F00003B332 /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
+		415AEF942A9297CD0003B332 /* HelpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpWindow.swift; sourceTree = "<group>"; };
+		415AEF962A9297FC0003B332 /* HelpCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCommands.swift; sourceTree = "<group>"; };
 		419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPackageSheet.swift; sourceTree = "<group>"; };
 		41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePackagesForm.swift; sourceTree = "<group>"; };
 		41F446192A8C03180068C630 /* ParameterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterStore.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		415AEF932A9297BF0003B332 /* Help Window */ = {
+			isa = PBXGroup;
+			children = (
+				415AEF942A9297CD0003B332 /* HelpWindow.swift */,
+				415AEF962A9297FC0003B332 /* HelpCommands.swift */,
+			);
+			path = "Help Window";
+			sourceTree = "<group>";
+		};
 		419B7805283D8AE700B6044D /* Local Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +199,7 @@
 				5B1676552399BC7600B242C2 /* View Model */,
 				5B66E4FF237DFF4500E7D0B9 /* Template View */,
 				5B66E4F1237DCF1800E7D0B9 /* Main Window */,
+				415AEF932A9297BF0003B332 /* Help Window */,
 				5BCA948B2764CD26003AFC4D /* Settings */,
 				5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */,
 				5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */,
@@ -437,12 +451,14 @@
 				5B87530223835389007C9267 /* NoTemplatesView.swift in Sources */,
 				5BCA949E2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift in Sources */,
 				5B66E4FB237DCFF000E7D0B9 /* NSImage+Convenience.swift in Sources */,
+				415AEF952A9297CD0003B332 /* HelpWindow.swift in Sources */,
 				5B875304238353B6007C9267 /* TemplateView.swift in Sources */,
 				5B8753102384A42F007C9267 /* TemplateParametersForm.swift in Sources */,
 				5BCA948A2764C9BD003AFC4D /* BootstrappApp.swift in Sources */,
 				415AEF922A9290F00003B332 /* SettingsWindow.swift in Sources */,
 				5B87532723893FCB007C9267 /* SplashSwiftUIOutputFormat.swift in Sources */,
 				5B66E4EF237DCA6C00E7D0B9 /* Templates.swift in Sources */,
+				415AEF972A9297FC0003B332 /* HelpCommands.swift in Sources */,
 				5B66E4FD237DD00A00E7D0B9 /* NSWindow+Extension.swift in Sources */,
 				5BCA94952764D0FD003AFC4D /* Bundle+Version.swift in Sources */,
 				5B87530E23849102007C9267 /* TemplatePreview.swift in Sources */,

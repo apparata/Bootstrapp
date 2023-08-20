@@ -30,6 +30,7 @@ struct BootstrappApp: App {
             SidebarCommands()
             TemplateCommands(templates: templates)
             AboutCommand()
+            HelpCommands()
 
             // Remove the "New Window" option from the File menu.
             CommandGroup(replacing: .newItem, addition: { })
@@ -55,6 +56,8 @@ struct BootstrappApp: App {
             ("Xcodeproj", .mit(year: "2018", holder: "Pedro Piñera Buendía")),
             ("Yams", .mit(year: "2016", holder: "JP Simard"))
         )
+        
+        HelpWindow()
     }
 }
 
