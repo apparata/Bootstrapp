@@ -3,6 +3,10 @@
 //
 
 import SwiftUI
+import SwiftUIToolbox
+import AttributionsUI
+
+// MARK: - Bootstrapp App
 
 @main
 struct BootstrappApp: App {
@@ -25,17 +29,32 @@ struct BootstrappApp: App {
         .commands {
             SidebarCommands()
             TemplateCommands(templates: templates)
-            AboutCommand {
-                appDelegate.showAboutWindow()
-            }
+            AboutCommand()
 
             // Remove the "New Window" option from the File menu.
             CommandGroup(replacing: .newItem, addition: { })
         }
         
-        Settings {
-            SettingsView()
-        }
+        SettingsWindow()
+        
+        AboutWindow(developedBy: "Martin Johannesson",
+                    attributionsWindowID: AttributionsWindow.windowID)
+        
+        AttributionsWindow(
+            "Bootstrapp may contain the following Third-Party packages:",
+            ("Splash", .mit(year: "2018", holder: "John Sundell")),
+            ("XcodeGen", .mit(year: "2018", holder: "Yonas Kolb")),
+            ("AEXML", .mit(year: "2014-2019", holder: "Marko Tadić <tadija@me.com> http://tadija.net")),
+            ("Graphviz", .mit(year: "2020", holder: "Read Evaluate Press, LLC")),
+            ("JSONUtilities", .mit(year: "2016", holder: "Luciano Marisi")),
+            ("PathKit", .bsd2Clause(year: "2014", holder: "Kyle Fuller. All rights reserved.")),
+            ("Rainbow", .mit(year: "2015", holder: "Wei Wang")),
+            ("Spectre", .bsd2Clause(year: "2015", holder: "Kyle Fuller. All rights reserved.")),
+            ("SwiftCLI", .mit(year: "2014", holder: "Jake Heiser")),
+            ("Version", .apache2(year: "2021", holder: "Max Howell")),
+            ("Xcodeproj", .mit(year: "2018", holder: "Pedro Piñera Buendía")),
+            ("Yams", .mit(year: "2016", holder: "JP Simard"))
+        )
     }
 }
 
@@ -53,14 +72,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
-    }
-    
-    func showAboutWindow() {
-        AboutWindowController().window?.makeKeyAndOrderFront(nil)
-    }
-    
-    /// Show settings programmatically
-    func showSettings() {
-        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
     }
 }

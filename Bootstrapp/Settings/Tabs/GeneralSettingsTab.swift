@@ -5,29 +5,14 @@
 import SwiftUI
 
 struct GeneralSettingsTab: View {
-    
-    @AppStorage("serviceSuffix") private var serviceSuffix: String = ""
-    
+        
     var body: some View {
         VStack {
             Form {
-                HStack {
-                    TextField("Placeholder", text: $serviceSuffix, onCommit: {
-                        // Do stuff
-                    })
-                }
-            }
-            Divider()
-            Form {
-                HStack {
-                    TextField("Placeholder", text: $serviceSuffix, onCommit: {
-                        // Do stuff
-                    })
-                }
+                Text("No settings available.")
             }
         }
         .padding(20)
-        //.frame(width: 350, height: 100)
     }
 }
 

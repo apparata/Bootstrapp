@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "attributionsui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apparata/AttributionsUI.git",
+      "state" : {
+        "revision" : "c655ceb2eafc49d727a539c2e9aac41eae845cc1",
+        "version" : "1.1.0"
+      }
+    },
+    {
       "identity" : "bootstrappkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/BootstrappKit.git",
@@ -95,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/SwiftUIToolbox.git",
       "state" : {
-        "revision" : "0c2030bc2c4303e02e7b7b29fe2e01339703dbd2",
-        "version" : "0.7.6"
+        "revision" : "e0c2636c3490f49b56091003b16e3444f49c698d",
+        "version" : "1.3.1"
       }
     },
     {
@@ -104,8 +113,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/SystemKit.git",
       "state" : {
-        "revision" : "e3a58668b578d2bc6d8ea2e44f43381cdb9a4736",
-        "version" : "1.5.0"
+        "revision" : "efea6e1d2fb036fdc692d2922feab9ee1c604ec6",
+        "version" : "1.6.0"
       }
     },
     {

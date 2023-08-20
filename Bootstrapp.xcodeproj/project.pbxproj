@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		415AEF902A9264F40003B332 /* AttributionsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 415AEF8F2A9264F40003B332 /* AttributionsUI */; };
+		415AEF922A9290F00003B332 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF912A9290F00003B332 /* SettingsWindow.swift */; };
 		419279752A8C0A1E00D6FEC9 /* AddPackageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */; };
 		41F446182A8BFE630068C630 /* TemplatePackagesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */; };
 		41F4461A2A8C03180068C630 /* ParameterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446192A8C03180068C630 /* ParameterStore.swift */; };
@@ -37,13 +39,8 @@
 		5B875323238928E8007C9267 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 5B875322238928E8007C9267 /* Splash */; };
 		5B87532523892A38007C9267 /* SwiftText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B87532423892A38007C9267 /* SwiftText.swift */; };
 		5B87532723893FCB007C9267 /* SplashSwiftUIOutputFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B87532623893FCB007C9267 /* SplashSwiftUIOutputFormat.swift */; };
-		5B8AFE06239D41AA00752574 /* ATTRIBUTIONS in Resources */ = {isa = PBXBuildFile; fileRef = 5B8AFE05239D41AA00752574 /* ATTRIBUTIONS */; };
-		5B8AFE0A239D458400752574 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AFE09239D458400752574 /* AboutWindowController.swift */; };
-		5B8AFE0C239D4DA300752574 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AFE0B239D4DA300752574 /* AboutView.swift */; };
-		5B8AFE0F239D559500752574 /* AttributionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */; };
 		5BCA94882764C907003AFC4D /* SystemKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BCA94872764C907003AFC4D /* SystemKit */; };
 		5BCA948A2764C9BD003AFC4D /* BootstrappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */; };
-		5BCA948D2764CD38003AFC4D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA948C2764CD38003AFC4D /* SettingsView.swift */; };
 		5BCA948F2764CD68003AFC4D /* GeneralSettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA948E2764CD68003AFC4D /* GeneralSettingsTab.swift */; };
 		5BCA94922764D0E1003AFC4D /* Bundle+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94912764D0E1003AFC4D /* Bundle+Name.swift */; };
 		5BCA94952764D0FD003AFC4D /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94942764D0FD003AFC4D /* Bundle+Version.swift */; };
@@ -53,7 +50,6 @@
 		5BCA949E2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA949D2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift */; };
 		5BCA94A02764E908003AFC4D /* ActionNotifications.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA949F2764E908003AFC4D /* ActionNotifications.swift.swift */; };
 		5BCA94A327651270003AFC4D /* TemplateCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A227651270003AFC4D /* TemplateCommands.swift */; };
-		5BCA94A52765146C003AFC4D /* AboutCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A42765146C003AFC4D /* AboutCommand.swift */; };
 		5BCA94A7276521FA003AFC4D /* DropTargetShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A6276521FA003AFC4D /* DropTargetShape.swift */; };
 		5BCA94A927653CF2003AFC4D /* URL+Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA94A827653CF2003AFC4D /* URL+Bookmark.swift */; };
 		5BCD3A71239D9297004A811A /* BootstrappKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BCD3A70239D9297004A811A /* BootstrappKit */; };
@@ -61,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		415AEF912A9290F00003B332 /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
 		419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPackageSheet.swift; sourceTree = "<group>"; };
 		41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePackagesForm.swift; sourceTree = "<group>"; };
 		41F446192A8C03180068C630 /* ParameterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterStore.swift; sourceTree = "<group>"; };
@@ -92,12 +89,7 @@
 		5B87531F2388B98D007C9267 /* TemplateView+MarkinStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TemplateView+MarkinStyle.swift"; sourceTree = "<group>"; };
 		5B87532423892A38007C9267 /* SwiftText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftText.swift; sourceTree = "<group>"; };
 		5B87532623893FCB007C9267 /* SplashSwiftUIOutputFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashSwiftUIOutputFormat.swift; sourceTree = "<group>"; };
-		5B8AFE05239D41AA00752574 /* ATTRIBUTIONS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATTRIBUTIONS; sourceTree = SOURCE_ROOT; };
-		5B8AFE09239D458400752574 /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
-		5B8AFE0B239D4DA300752574 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionsWindowController.swift; sourceTree = "<group>"; };
 		5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrappApp.swift; sourceTree = "<group>"; };
-		5BCA948C2764CD38003AFC4D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5BCA948E2764CD68003AFC4D /* GeneralSettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsTab.swift; sourceTree = "<group>"; };
 		5BCA94912764D0E1003AFC4D /* Bundle+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Name.swift"; sourceTree = "<group>"; };
 		5BCA94942764D0FD003AFC4D /* Bundle+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Version.swift"; sourceTree = "<group>"; };
@@ -107,7 +99,6 @@
 		5BCA949D2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSidebarToolbarItem.swift; sourceTree = "<group>"; };
 		5BCA949F2764E908003AFC4D /* ActionNotifications.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionNotifications.swift.swift; sourceTree = "<group>"; };
 		5BCA94A227651270003AFC4D /* TemplateCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCommands.swift; sourceTree = "<group>"; };
-		5BCA94A42765146C003AFC4D /* AboutCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCommand.swift; sourceTree = "<group>"; };
 		5BCA94A6276521FA003AFC4D /* DropTargetShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropTargetShape.swift; sourceTree = "<group>"; };
 		5BCA94A827653CF2003AFC4D /* URL+Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Bookmark.swift"; sourceTree = "<group>"; };
 		5BEC048E238F1E8600A72DBE /* SettingPresets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SettingPresets; sourceTree = "<group>"; };
@@ -122,6 +113,7 @@
 				5B87530923846E6B007C9267 /* SwiftUIToolbox in Frameworks */,
 				5B875323238928E8007C9267 /* Splash in Frameworks */,
 				5BCD3A71239D9297004A811A /* BootstrappKit in Frameworks */,
+				415AEF902A9264F40003B332 /* AttributionsUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,14 +191,12 @@
 				5B1676552399BC7600B242C2 /* View Model */,
 				5B66E4FF237DFF4500E7D0B9 /* Template View */,
 				5B66E4F1237DCF1800E7D0B9 /* Main Window */,
-				5B8AFE08239D456F00752574 /* About Window */,
 				5BCA948B2764CD26003AFC4D /* Settings */,
 				5BCA94892764C9BD003AFC4D /* BootstrappApp.swift */,
 				5B66E4D1237DA8C400E7D0B9 /* Assets.xcassets */,
 				5B87530523835B7D007C9267 /* Colors.xcassets */,
 				5B66E4D9237DA8C400E7D0B9 /* Info.plist */,
 				5B66E4DA237DA8C400E7D0B9 /* Bootstrapp.entitlements */,
-				5B8AFE05239D41AA00752574 /* ATTRIBUTIONS */,
 				5B66E4D3237DA8C400E7D0B9 /* Preview Content */,
 				419B7805283D8AE700B6044D /* Local Packages */,
 			);
@@ -294,30 +284,11 @@
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
-		5B8AFE08239D456F00752574 /* About Window */ = {
-			isa = PBXGroup;
-			children = (
-				5B8AFE0D239D558200752574 /* Attributions Window */,
-				5B8AFE09239D458400752574 /* AboutWindowController.swift */,
-				5B8AFE0B239D4DA300752574 /* AboutView.swift */,
-				5BCA94A42765146C003AFC4D /* AboutCommand.swift */,
-			);
-			path = "About Window";
-			sourceTree = "<group>";
-		};
-		5B8AFE0D239D558200752574 /* Attributions Window */ = {
-			isa = PBXGroup;
-			children = (
-				5B8AFE0E239D559500752574 /* AttributionsWindowController.swift */,
-			);
-			path = "Attributions Window";
-			sourceTree = "<group>";
-		};
 		5BCA948B2764CD26003AFC4D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				5BCA94902764CD6E003AFC4D /* Tabs */,
-				5BCA948C2764CD38003AFC4D /* SettingsView.swift */,
+				415AEF912A9290F00003B332 /* SettingsWindow.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -383,6 +354,7 @@
 				5B875322238928E8007C9267 /* Splash */,
 				5BCD3A70239D9297004A811A /* BootstrappKit */,
 				5BCA94872764C907003AFC4D /* SystemKit */,
+				415AEF8F2A9264F40003B332 /* AttributionsUI */,
 			);
 			productName = Bootstrapp;
 			productReference = 5B66E4CA237DA8C200E7D0B9 /* Bootstrapp.app */;
@@ -418,6 +390,7 @@
 				5B875321238928E8007C9267 /* XCRemoteSwiftPackageReference "Splash" */,
 				5BCD3A6F239D9297004A811A /* XCRemoteSwiftPackageReference "BootstrappKit" */,
 				5BCA94862764C907003AFC4D /* XCRemoteSwiftPackageReference "SystemKit" */,
+				415AEF8E2A9264F40003B332 /* XCRemoteSwiftPackageReference "AttributionsUI" */,
 			);
 			productRefGroup = 5B66E4CB237DA8C200E7D0B9 /* Products */;
 			projectDirPath = "";
@@ -433,7 +406,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B8AFE06239D41AA00752574 /* ATTRIBUTIONS in Resources */,
 				5B87530623835B7D007C9267 /* Colors.xcassets in Resources */,
 				5B66E4D5237DA8C400E7D0B9 /* Preview Assets.xcassets in Resources */,
 				5B66E4D2237DA8C400E7D0B9 /* Assets.xcassets in Resources */,
@@ -461,7 +433,6 @@
 				5B8753202388B98D007C9267 /* TemplateView+MarkinStyle.swift in Sources */,
 				41F4461E2A8C036C0068C630 /* PackageStore.swift in Sources */,
 				5B66E4F7237DCF6100E7D0B9 /* SidebarSearchField.swift in Sources */,
-				5B8AFE0F239D559500752574 /* AttributionsWindowController.swift in Sources */,
 				5BCA94A327651270003AFC4D /* TemplateCommands.swift in Sources */,
 				5B1676412399928B00B242C2 /* MainSidebarView.swift in Sources */,
 				419279752A8C0A1E00D6FEC9 /* AddPackageSheet.swift in Sources */,
@@ -477,18 +448,15 @@
 				5B875304238353B6007C9267 /* TemplateView.swift in Sources */,
 				5B8753102384A42F007C9267 /* TemplateParametersForm.swift in Sources */,
 				5BCA948A2764C9BD003AFC4D /* BootstrappApp.swift in Sources */,
+				415AEF922A9290F00003B332 /* SettingsWindow.swift in Sources */,
 				5B87532723893FCB007C9267 /* SplashSwiftUIOutputFormat.swift in Sources */,
 				5B66E4EF237DCA6C00E7D0B9 /* Templates.swift in Sources */,
 				5B66E4FD237DD00A00E7D0B9 /* NSWindow+Extension.swift in Sources */,
 				5BCA94952764D0FD003AFC4D /* Bundle+Version.swift in Sources */,
-				5B8AFE0C239D4DA300752574 /* AboutView.swift in Sources */,
-				5BCA948D2764CD38003AFC4D /* SettingsView.swift in Sources */,
 				5B87530E23849102007C9267 /* TemplatePreview.swift in Sources */,
 				5BCA94992764D64D003AFC4D /* WindowAccessor.swift in Sources */,
-				5BCA94A52765146C003AFC4D /* AboutCommand.swift in Sources */,
 				5B87531323873662007C9267 /* MacButton.swift in Sources */,
 				41F4461A2A8C03180068C630 /* ParameterStore.swift in Sources */,
-				5B8AFE0A239D458400752574 /* AboutWindowController.swift in Sources */,
 				5B16763F2399925D00B242C2 /* MainContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,12 +672,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		415AEF8E2A9264F40003B332 /* XCRemoteSwiftPackageReference "AttributionsUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apparata/AttributionsUI.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.0;
+			};
+		};
 		5B87530723846E6B007C9267 /* XCRemoteSwiftPackageReference "SwiftUIToolbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apparata/SwiftUIToolbox.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.7.6;
+				version = 1.3.1;
 			};
 		};
 		5B875321238928E8007C9267 /* XCRemoteSwiftPackageReference "Splash" */ = {
@@ -725,7 +701,7 @@
 			repositoryURL = "https://github.com/apparata/SystemKit.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.5.0;
+				version = 1.6.0;
 			};
 		};
 		5BCD3A6F239D9297004A811A /* XCRemoteSwiftPackageReference "BootstrappKit" */ = {
@@ -739,6 +715,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		415AEF8F2A9264F40003B332 /* AttributionsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 415AEF8E2A9264F40003B332 /* XCRemoteSwiftPackageReference "AttributionsUI" */;
+			productName = AttributionsUI;
+		};
 		5B66E4E7237DC8FE00E7D0B9 /* BootstrappKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BootstrappKit;
