@@ -5,6 +5,7 @@
 import Foundation
 import Combine
 import BootstrappKit
+import SwiftUI
 
 class TemplatesModel: ObservableObject {
     
@@ -57,9 +58,11 @@ class TemplatesModel: ObservableObject {
         if let templates = Templates(url: url) {
             let categorizedTemplates = Self.organizeTemplatesByCategory(from: templates)
             DispatchQueue.main.async { [weak self] in
-                self?.bootstrappTemplates = templates
-                self?.templatesByCategory = categorizedTemplates
-                self?.templateSelection = nil
+                withAnimation {
+                    self?.bootstrappTemplates = templates
+                    self?.templatesByCategory = categorizedTemplates
+                    self?.templateSelection = nil
+                }
                 do {
                     try url.persistAsBookmark(id: Self.bookmarkID)
                 } catch {

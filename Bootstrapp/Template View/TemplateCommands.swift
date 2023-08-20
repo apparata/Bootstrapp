@@ -17,6 +17,17 @@ struct TemplateCommands: Commands {
             }
             .keyboardShortcut("B", modifiers: [.command])
             .disabled(templates?.templateSelection == nil)
+            
+            Divider()
+            
+            Button {
+                withAnimation {
+                    templates?.unsetTemplateRootFolder()
+                }
+            } label: {
+                Text("Close Template Root Folder", comment: "Close all templates.")
+            }
+            .keyboardShortcut("K", modifiers: [.command])
         }
     }
 }

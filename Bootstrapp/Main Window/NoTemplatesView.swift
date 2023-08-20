@@ -26,6 +26,7 @@ struct NoTemplatesView: View {
                     ? "Select a template from the sidebar, or drag a folder from Finder to set a new templates root folder."
                     : "Set a templates root folder to get started. Just drag it from Finder to this window.")
                     .font(.system(size: 15))
+                    .lineSpacing(4)
                     .frame(width: 300)
                     .padding(.bottom, 20)
                 ZStack {
