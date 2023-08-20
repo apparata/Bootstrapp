@@ -33,10 +33,15 @@ struct TemplateModel: Identifiable, Hashable, SearchFilterable {
         template.specification
     }
     
-    var template: BootstrappTemplate
+    let template: BootstrappTemplate
+
+    let parameterStore: ParameterStore
+    let packageStore: PackageStore
     
     init(template: BootstrappTemplate) {
         self.template = template
+        self.parameterStore = ParameterStore(specification: template.specification)
+        self.packageStore = PackageStore(specification: template.specification)
     }
     
     func isMatch(for searchString: String) -> Bool {

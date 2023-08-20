@@ -11,6 +11,7 @@
 		415AEF922A9290F00003B332 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF912A9290F00003B332 /* SettingsWindow.swift */; };
 		415AEF952A9297CD0003B332 /* HelpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF942A9297CD0003B332 /* HelpWindow.swift */; };
 		415AEF972A9297FC0003B332 /* HelpCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF962A9297FC0003B332 /* HelpCommands.swift */; };
+		415AEF9A2A92D57D0003B332 /* Bootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF992A92D57D0003B332 /* Bootstrapper.swift */; };
 		419279752A8C0A1E00D6FEC9 /* AddPackageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */; };
 		41F446182A8BFE630068C630 /* TemplatePackagesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */; };
 		41F4461A2A8C03180068C630 /* ParameterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446192A8C03180068C630 /* ParameterStore.swift */; };
@@ -60,6 +61,7 @@
 		415AEF912A9290F00003B332 /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
 		415AEF942A9297CD0003B332 /* HelpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpWindow.swift; sourceTree = "<group>"; };
 		415AEF962A9297FC0003B332 /* HelpCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCommands.swift; sourceTree = "<group>"; };
+		415AEF992A92D57D0003B332 /* Bootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootstrapper.swift; sourceTree = "<group>"; };
 		419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPackageSheet.swift; sourceTree = "<group>"; };
 		41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePackagesForm.swift; sourceTree = "<group>"; };
 		41F446192A8C03180068C630 /* ParameterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterStore.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				5B66E4EE237DCA6C00E7D0B9 /* Templates.swift */,
+				415AEF992A92D57D0003B332 /* Bootstrapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				5B875304238353B6007C9267 /* TemplateView.swift in Sources */,
 				5B8753102384A42F007C9267 /* TemplateParametersForm.swift in Sources */,
 				5BCA948A2764C9BD003AFC4D /* BootstrappApp.swift in Sources */,
+				415AEF9A2A92D57D0003B332 /* Bootstrapper.swift in Sources */,
 				415AEF922A9290F00003B332 /* SettingsWindow.swift in Sources */,
 				5B87532723893FCB007C9267 /* SplashSwiftUIOutputFormat.swift in Sources */,
 				5B66E4EF237DCA6C00E7D0B9 /* Templates.swift in Sources */,

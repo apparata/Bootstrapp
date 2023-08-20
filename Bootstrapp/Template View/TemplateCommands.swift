@@ -6,25 +6,17 @@ import SwiftUI
 
 struct TemplateCommands: Commands {
     
-    @ObservedObject var templates = TemplatesModel()
+    @FocusedObject var templates: TemplatesModel?
 
     var body: some Commands {
         CommandMenu(Text("Templates", comment: "Menu title for template actions")) {
             Button {
-                print("Templates!")
+                NotificationCenter.default.post(name: .bootstrappCurrentTemplate, object: nil)
             } label: {
                 Text("Build", comment: "Build the selected template.")
             }
             .keyboardShortcut("B", modifiers: [.command])
-            
-            Divider()
-            
-            Button {
-                templates.unsetTemplateRootFolder()
-            } label: {
-                Text("Close Template Root Folder", comment: "Close all templates.")
-            }
-            .keyboardShortcut("K", modifiers: [.command])
+            .disabled(templates?.templateSelection == nil)
         }
     }
 }

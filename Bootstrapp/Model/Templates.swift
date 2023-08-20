@@ -59,7 +59,7 @@ public class Templates: ObservableObject {
     
     private func monitorChanges(at url: URL) {
         do {
-            let fileEventStream = try FileEventStream(paths: [url.path])
+            let fileEventStream = try FileEventStream(paths: [url.path], flags: .ignoreSelf)
             changeSubscription = fileEventStream
                 .sink { [weak self] event in
                     do {

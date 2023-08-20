@@ -12,7 +12,7 @@ class TemplatesModel: ObservableObject {
     
     private static let bookmarkID = "template_root_folder"
 
-    @Published var templateSelection: BootstrappTemplate?
+    @Published var templateSelection: TemplateModel?
     
     var hasTemplates: Bool {
         guard let bootstrappTemplates = bootstrappTemplates else {

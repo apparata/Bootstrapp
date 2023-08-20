@@ -6,28 +6,26 @@ import SwiftUI
 import BootstrappKit
 import Markin
 
+extension Notification.Name {
+    static let bootstrappCurrentTemplate = Notification.Name("bootstrappCurrentTemplate")
+}
+
 struct TemplateView: View {
     
     let templateModel: TemplateModel
+
+    @ObservedObject var parameterStore: ParameterStore
+    @ObservedObject var packageStore: PackageStore
     
     var template: BootstrappTemplate {
         templateModel.template
     }
-    
-    @StateObject private var parameterStore: ParameterStore
-    @StateObject private var packageStore: PackageStore
     
     @State private var showingInvalidInputSheet: Bool = false
 
     @State private var openIn: OpenIn = .finder
     
     @Environment(\.colorScheme) private var colorScheme
-    
-    init(template: TemplateModel) {
-        templateModel = template
-        _parameterStore = StateObject(wrappedValue: ParameterStore(specification: template.specification))
-        _packageStore = StateObject(wrappedValue: PackageStore(specification: template.specification))
-    }
     
     var body: some View {
         ZStack {
@@ -112,12 +110,17 @@ struct TemplateView: View {
             }
         }
         .navigationSubtitle(templateModel.id)
+        .onReceive(NotificationCenter.default.publisher(for: .bootstrappCurrentTemplate)) { _ in
+            DispatchQueue.main.async {
+                makeAction()
+            }
+        }
     }
 
     private func makeAction() {
         if validateParameters(parameterStore) {
             showingInvalidInputSheet = false
-            bootstrapp(
+            Bootstrapper().bootstrapp(
                 template: template,
                 parameterStore: parameterStore,
                 packageStore: packageStore,
@@ -151,64 +154,5 @@ private extension TemplateView {
         }
         
         return true
-    }
-    
-    func bootstrapp(
-        template: BootstrappTemplate,
-        parameterStore: ParameterStore,
-        packageStore: PackageStore,
-        openIn: OpenIn
-    ) {
-        
-        DispatchQueue.global().async {
-            
-            var parametersWithValues: [BootstrappParameter] = []
-            for entry in parameterStore.parameters {
-                switch entry.parameter.type {
-                case .string:
-                    let parameterWithValue = entry.parameter.withValue(value: entry.value.stringValue)
-                    parametersWithValues.append(parameterWithValue)
-                case .bool:
-                    let parameterWithValue = entry.parameter.withValue(value: entry.value.boolValue)
-                    parametersWithValues.append(parameterWithValue)
-                case .option:
-                    let parameterWithValue = entry.parameter.withValue(value: entry.value.optionValue)
-                    parametersWithValues.append(parameterWithValue)
-                }
-            }
-            
-            var packages: [BootstrappPackage] = []
-            for entry in packageStore.packages {
-                packages.append(BootstrappPackage(
-                    name: entry.name,
-                    url: entry.url,
-                    version: entry.version))
-            }
-            
-            let bootstrapp = Bootstrapp(
-                template: template,
-                parameters: parametersWithValues,
-                packages: packages)
-            do {
-                var outputPath = try bootstrapp.instantiateTemplate()
-                if openIn == .finder, outputPath.url.pathExtension == "xcodeproj" {
-                    outputPath = outputPath.deletingLastComponent
-                }
-                DispatchQueue.main.async {
-                    NSWorkspace.shared.open(outputPath.url)
-                }
-            } catch {
-                dump(error)
-                return
-            }
-            
-        }
-    }
-}
-
-enum OpenIn: Identifiable {
-    case finder
-    case Xcode
-    
-    var id: Self { self }
+    }    
 }

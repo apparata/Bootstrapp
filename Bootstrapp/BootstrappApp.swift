@@ -25,10 +25,11 @@ struct BootstrappApp: App {
                 .coordinateSpace(name: "HoverSpace")
                 .environmentObject(MainWindowState())
                 .environmentObject(templates)
+                .focusedSceneObject(templates)
         }
         .commands {
             SidebarCommands()
-            TemplateCommands(templates: templates)
+            TemplateCommands()
             AboutCommand()
             HelpCommands()
 
