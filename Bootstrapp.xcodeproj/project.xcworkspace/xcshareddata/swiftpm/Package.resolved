@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/SwiftUIToolbox.git",
       "state" : {
-        "revision" : "e0c2636c3490f49b56091003b16e3444f49c698d",
-        "version" : "1.3.1"
+        "revision" : "032f1e9c966e052e1bb6c8455ed3b43c84f27cbf",
+        "version" : "1.4.0"
       }
     },
     {

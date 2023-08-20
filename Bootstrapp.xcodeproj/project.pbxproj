@@ -677,7 +677,7 @@
 			repositoryURL = "https://github.com/apparata/SwiftUIToolbox.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.3.1;
+				version = 1.4.0;
 			};
 		};
 		5B875321238928E8007C9267 /* XCRemoteSwiftPackageReference "Splash" */ = {
