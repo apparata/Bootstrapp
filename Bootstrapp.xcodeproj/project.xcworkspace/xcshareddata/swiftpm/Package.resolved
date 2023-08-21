@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/BootstrappKit.git",
       "state" : {
-        "revision" : "0c0a4a33329727ac17ae24f432f7a3043d680a8d",
-        "version" : "1.1.0"
+        "revision" : "930ebb7c7b6e65f513d2bf1e412432200a009d2b",
+        "version" : "1.2.0"
       }
     },
     {
