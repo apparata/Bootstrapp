@@ -2,7 +2,7 @@
 //  Copyright © 2019 Apparata AB. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 public extension NSImage {
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		415AEF952A9297CD0003B332 /* HelpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF942A9297CD0003B332 /* HelpWindow.swift */; };
 		415AEF972A9297FC0003B332 /* HelpCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF962A9297FC0003B332 /* HelpCommands.swift */; };
 		415AEF9A2A92D57D0003B332 /* Bootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF992A92D57D0003B332 /* Bootstrapper.swift */; };
+		41614AFB2B12148D007BFEF6 /* GeneralErrorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41614AFA2B12148D007BFEF6 /* GeneralErrorSheet.swift */; };
 		419279752A8C0A1E00D6FEC9 /* AddPackageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */; };
 		41F446182A8BFE630068C630 /* TemplatePackagesForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */; };
 		41F4461A2A8C03180068C630 /* ParameterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F446192A8C03180068C630 /* ParameterStore.swift */; };
@@ -62,6 +63,7 @@
 		415AEF942A9297CD0003B332 /* HelpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpWindow.swift; sourceTree = "<group>"; };
 		415AEF962A9297FC0003B332 /* HelpCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCommands.swift; sourceTree = "<group>"; };
 		415AEF992A92D57D0003B332 /* Bootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootstrapper.swift; sourceTree = "<group>"; };
+		41614AFA2B12148D007BFEF6 /* GeneralErrorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralErrorSheet.swift; sourceTree = "<group>"; };
 		419279742A8C0A1E00D6FEC9 /* AddPackageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPackageSheet.swift; sourceTree = "<group>"; };
 		41F446172A8BFE630068C630 /* TemplatePackagesForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePackagesForm.swift; sourceTree = "<group>"; };
 		41F446192A8C03180068C630 /* ParameterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterStore.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				5B875303238353B6007C9267 /* TemplateView.swift */,
 				5B87530D23849102007C9267 /* TemplatePreview.swift */,
 				5B87531523874234007C9267 /* InvalidInputSheet.swift */,
+				41614AFA2B12148D007BFEF6 /* GeneralErrorSheet.swift */,
 				5B87531F2388B98D007C9267 /* TemplateView+MarkinStyle.swift */,
 				5BCA94A227651270003AFC4D /* TemplateCommands.swift */,
 			);
@@ -379,7 +382,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Apparata AB";
 				TargetAttributes = {
 					5B66E4C9237DA8C200E7D0B9 = {
@@ -450,6 +453,7 @@
 				5BCA94A7276521FA003AFC4D /* DropTargetShape.swift in Sources */,
 				5B1676572399BC8900B242C2 /* TemplatesModel.swift in Sources */,
 				5BCA948F2764CD68003AFC4D /* GeneralSettingsTab.swift in Sources */,
+				41614AFB2B12148D007BFEF6 /* GeneralErrorSheet.swift in Sources */,
 				5B1676592399BCDC00B242C2 /* TemplateModel.swift in Sources */,
 				5B87530223835389007C9267 /* NoTemplatesView.swift in Sources */,
 				5BCA949E2764E4C9003AFC4D /* ToggleSidebarToolbarItem.swift in Sources */,
@@ -491,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -525,6 +530,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -553,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -587,6 +594,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

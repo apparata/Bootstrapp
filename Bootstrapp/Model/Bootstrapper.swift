@@ -20,51 +20,44 @@ class Bootstrapper {
         parameterStore: ParameterStore,
         packageStore: PackageStore,
         openIn: OpenIn
-    ) {
-        
-        DispatchQueue.global().async {
-            
-            var parametersWithValues: [BootstrappParameter] = []
-            for entry in parameterStore.parameters {
-                switch entry.parameter.type {
-                case .string:
-                    let parameterWithValue = entry.parameter.withValue(value: entry.value.stringValue)
-                    parametersWithValues.append(parameterWithValue)
-                case .bool:
-                    let parameterWithValue = entry.parameter.withValue(value: entry.value.boolValue)
-                    parametersWithValues.append(parameterWithValue)
-                case .option:
-                    let parameterWithValue = entry.parameter.withValue(value: entry.value.optionValue)
-                    parametersWithValues.append(parameterWithValue)
-                }
+    ) async throws {
+
+        var parametersWithValues: [BootstrappParameter] = []
+        for entry in parameterStore.parameters {
+            switch entry.parameter.type {
+            case .string:
+                let parameterWithValue = entry.parameter.withValue(value: entry.value.stringValue)
+                parametersWithValues.append(parameterWithValue)
+            case .bool:
+                let parameterWithValue = entry.parameter.withValue(value: entry.value.boolValue)
+                parametersWithValues.append(parameterWithValue)
+            case .option:
+                let parameterWithValue = entry.parameter.withValue(value: entry.value.optionValue)
+                parametersWithValues.append(parameterWithValue)
             }
-            
-            var packages: [BootstrappPackage] = []
-            for entry in packageStore.packages {
-                packages.append(BootstrappPackage(
-                    name: entry.name,
-                    url: entry.url,
-                    version: entry.version))
-            }
-            
-            let bootstrapp = Bootstrapp(
-                template: template,
-                parameters: parametersWithValues,
-                packages: packages)
-            do {
-                var outputPath = try bootstrapp.instantiateTemplate()
-                if openIn == .finder, outputPath.url.pathExtension == "xcodeproj" {
-                    outputPath = outputPath.deletingLastComponent
-                }
-                DispatchQueue.main.async {
-                    NSWorkspace.shared.open(outputPath.url)
-                }
-            } catch {
-                dump(error)
-                return
-            }
-            
+        }
+
+        var packages: [BootstrappPackage] = []
+        for entry in packageStore.packages {
+            packages.append(BootstrappPackage(
+                name: entry.name,
+                url: entry.url,
+                version: entry.version))
+        }
+
+        let bootstrapp = Bootstrapp(
+            template: template,
+            parameters: parametersWithValues,
+            packages: packages)
+
+        var outputPath = try bootstrapp.instantiateTemplate()
+        if openIn == .finder, outputPath.url.pathExtension == "xcodeproj" {
+            outputPath = outputPath.deletingLastComponent
+        }
+
+        let url = outputPath.url
+        await MainActor.run {
+            _ = NSWorkspace.shared.open(url)
         }
     }
-
 }

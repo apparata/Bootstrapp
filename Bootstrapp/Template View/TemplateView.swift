@@ -25,6 +25,8 @@ struct TemplateView: View {
 
     @State private var openIn: OpenIn = .finder
     
+    @State private var errorText: String?
+
     @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
@@ -79,6 +81,9 @@ struct TemplateView: View {
         .sheet(isPresented: $showingInvalidInputSheet) {
             InvalidInputSheet(showingSheet: $showingInvalidInputSheet)
         }
+        .sheet(item: $errorText) { errorText in
+            GeneralErrorSheet(errorText: errorText)
+        }
         .toolbar {
             ToolbarItemGroup {
                 Button {
@@ -120,11 +125,22 @@ struct TemplateView: View {
     private func makeAction() {
         if validateParameters(parameterStore) {
             showingInvalidInputSheet = false
-            Bootstrapper().bootstrapp(
-                template: template,
-                parameterStore: parameterStore,
-                packageStore: packageStore,
-                openIn: openIn)
+            Task.detached {
+                do {
+                    try await Bootstrapper().bootstrapp(
+                        template: template,
+                        parameterStore: parameterStore,
+                        packageStore: packageStore,
+                        openIn: openIn)
+                } catch {
+                    await MainActor.run {
+                        dump(error)
+                        var string: String = ""
+                        dump(error, to: &string)
+                        self.errorText = string
+                    }
+                }
+            }
         } else {
             showingInvalidInputSheet = true
         }

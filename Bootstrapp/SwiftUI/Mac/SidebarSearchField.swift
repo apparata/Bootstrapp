@@ -4,7 +4,7 @@
 
 #if os(macOS)
 
-import Cocoa
+import AppKit
 import SwiftUI
 
 struct SidebarSearchField: NSViewRepresentable {

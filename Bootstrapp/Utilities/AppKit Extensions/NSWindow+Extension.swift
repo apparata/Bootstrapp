@@ -3,7 +3,7 @@
 //
 
 import Foundation
-import Cocoa
+import AppKit
 
 public extension NSWindow {
     
