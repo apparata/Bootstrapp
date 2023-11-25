@@ -36,7 +36,7 @@ struct TemplateParametersForm: View {
                             TextField(
                                 "\(parameter.parameter.type.rawValue) (\(parameter.parameter.validationRegex?.pattern ?? ".*"))",
                                 text: $parameter.value.stringValue,
-                                onCommit: { print("Commit!") })
+                                onCommit: { /*print("Commit!")*/ })
                                 .border(SeparatorShapeStyle(), width: 2)
                                 .frame(width: 300)
                             if okToAnimate {

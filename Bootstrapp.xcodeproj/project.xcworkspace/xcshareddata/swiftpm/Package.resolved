@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/BootstrappKit.git",
       "state" : {
-        "revision" : "930ebb7c7b6e65f513d2bf1e412432200a009d2b",
-        "version" : "1.2.0"
+        "revision" : "5e8552c577f8f1cb200d4433a40a8b1227f745af",
+        "version" : "1.3.0"
       }
     },
     {
@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apparata/TemplateKit.git",
       "state" : {
-        "revision" : "a550c7b20b4e62285cc3824e839b18434e4ec7d5",
-        "version" : "0.5.0"
+        "revision" : "2c3e8ea8d779637a30d741bc7280dabe72c23155",
+        "version" : "0.6.0"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yonaskolb/XcodeGen.git",
       "state" : {
-        "revision" : "26e817b2deca1ceb9fdebfa963b86311fef3d05c",
-        "version" : "2.36.1"
+        "revision" : "87a275fb0852bb231550e66473804de57063c957",
+        "version" : "2.38.0"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tuist/XcodeProj.git",
       "state" : {
-        "revision" : "6e60fb55271c80f83a186c9b1b4982fd991cfc0a",
-        "version" : "8.13.0"
+        "revision" : "3797181813ee963fe305d939232bc576d23ddbb0",
+        "version" : "8.15.0"
       }
     },
     {

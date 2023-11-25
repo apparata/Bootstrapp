@@ -42,14 +42,14 @@ struct TemplatePackagesForm: View {
                             TextField(
                                 "",
                                 text: $package.url,
-                                onCommit: { print("Commit!") })
+                                onCommit: { /*print("Commit!")*/ })
                                 .border(SeparatorShapeStyle(), width: 2)
                                 .frame(width: 340)
                                 .gridColumnAlignment(.leading)
                             TextField(
                                 "",
                                 text: $package.version,
-                                onCommit: { print("Commit!") })
+                                onCommit: { /*print("Commit!")*/ })
                                 .border(SeparatorShapeStyle(), width: 2)
                                 .frame(width: 60)
                                 .gridColumnAlignment(.leading)
