@@ -6,6 +6,11 @@ import SwiftUI
 import BootstrappKit
 import Markin
 
+struct ErrorText: Identifiable {
+    var id: String { text }
+    let text: String
+}
+
 extension Notification.Name {
     static let bootstrappCurrentTemplate = Notification.Name("bootstrappCurrentTemplate")
 }
@@ -25,7 +30,7 @@ struct TemplateView: View {
 
     @State private var openIn: OpenIn = .finder
     
-    @State private var errorText: String?
+    @State private var errorText: ErrorText?
 
     @Environment(\.colorScheme) private var colorScheme
     
@@ -82,7 +87,7 @@ struct TemplateView: View {
             InvalidInputSheet(showingSheet: $showingInvalidInputSheet)
         }
         .sheet(item: $errorText) { errorText in
-            GeneralErrorSheet(errorText: errorText)
+            GeneralErrorSheet(errorText: errorText.text)
         }
         .toolbar {
             ToolbarItemGroup {
@@ -137,7 +142,7 @@ struct TemplateView: View {
                         dump(error)
                         var string: String = ""
                         dump(error, to: &string)
-                        self.errorText = string
+                        self.errorText = ErrorText(text: string)
                     }
                 }
             }

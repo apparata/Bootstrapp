@@ -5,10 +5,6 @@
 import SwiftUI
 import TemplateKit
 
-extension String: Identifiable {
-    public var id: String { self }
-}
-
 struct AddPackageSheet: View {
     
     @Binding var showingSheet: Bool
