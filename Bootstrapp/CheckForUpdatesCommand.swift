@@ -3,13 +3,23 @@
 //
 
 import SwiftUI
+import SwiftUIToolbox
 import Sparkle
 
-struct CheckForUpdatesCommand: Commands {
+struct AppInfoCommands: Commands {
+
+    @Environment(\.openWindow) private var openWindow
+
     let updater: SPUUpdater
 
     var body: some Commands {
-        CommandGroup(after: .appInfo) {
+        CommandGroup(replacing: .appInfo) {
+            Button {
+                openWindow(id: AboutWindow.windowID)
+            } label: {
+                Text("About \(Bundle.main.name)")
+            }
+
             Button("Check for Updates…") {
                 updater.checkForUpdates()
             }

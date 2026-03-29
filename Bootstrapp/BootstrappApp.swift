@@ -38,8 +38,7 @@ struct BootstrappApp: App {
         .commands {
             SidebarCommands()
             TemplateCommands()
-            CheckForUpdatesCommand(updater: updaterController.updater)
-            AboutCommand()
+            AppInfoCommands(updater: updaterController.updater)
             HelpCommands()
 
             // Remove the "New Window" option from the File menu.
