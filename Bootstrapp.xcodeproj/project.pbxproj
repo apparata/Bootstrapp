@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		414EDC8F2F7961450055C855 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 414EDC8E2F7961450055C855 /* Sparkle */; };
 		415AEF902A9264F40003B332 /* AttributionsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 415AEF8F2A9264F40003B332 /* AttributionsUI */; };
 		415AEF922A9290F00003B332 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF912A9290F00003B332 /* SettingsWindow.swift */; };
 		415AEF952A9297CD0003B332 /* HelpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415AEF942A9297CD0003B332 /* HelpWindow.swift */; };
@@ -116,6 +117,7 @@
 				5BCA94882764C907003AFC4D /* SystemKit in Frameworks */,
 				5B87530923846E6B007C9267 /* SwiftUIToolbox in Frameworks */,
 				5B875323238928E8007C9267 /* Splash in Frameworks */,
+				414EDC8F2F7961450055C855 /* Sparkle in Frameworks */,
 				5BCD3A71239D9297004A811A /* BootstrappKit in Frameworks */,
 				415AEF902A9264F40003B332 /* AttributionsUI in Frameworks */,
 			);
@@ -369,6 +371,7 @@
 				5BCD3A70239D9297004A811A /* BootstrappKit */,
 				5BCA94872764C907003AFC4D /* SystemKit */,
 				415AEF8F2A9264F40003B332 /* AttributionsUI */,
+				414EDC8E2F7961450055C855 /* Sparkle */,
 			);
 			productName = Bootstrapp;
 			productReference = 5B66E4CA237DA8C200E7D0B9 /* Bootstrapp.app */;
@@ -405,6 +408,7 @@
 				5BCD3A6F239D9297004A811A /* XCRemoteSwiftPackageReference "BootstrappKit" */,
 				5BCA94862764C907003AFC4D /* XCRemoteSwiftPackageReference "SystemKit" */,
 				415AEF8E2A9264F40003B332 /* XCRemoteSwiftPackageReference "AttributionsUI" */,
+				414EDC8D2F7961450055C855 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 5B66E4CB237DA8C200E7D0B9 /* Products */;
 			projectDirPath = "";
@@ -694,6 +698,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		414EDC8D2F7961450055C855 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.0;
+			};
+		};
 		415AEF8E2A9264F40003B332 /* XCRemoteSwiftPackageReference "AttributionsUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apparata/AttributionsUI.git";
@@ -737,6 +749,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		414EDC8E2F7961450055C855 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 414EDC8D2F7961450055C855 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
 		415AEF8F2A9264F40003B332 /* AttributionsUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 415AEF8E2A9264F40003B332 /* XCRemoteSwiftPackageReference "AttributionsUI" */;
