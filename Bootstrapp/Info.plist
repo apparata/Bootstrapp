@@ -28,6 +28,12 @@
 	<string>Copyright © 2019 Apparata AB. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/apparata/Bootstrapp/master/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>AvJMcXvL9lwbU8D00Z9uECjR9zdeOlcsl7Rktg/hQVE=</string>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
 	<key>NSSupportsAutomaticTermination</key>
 	<true/>
 	<key>NSSupportsSuddenTermination</key>

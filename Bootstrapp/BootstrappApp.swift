@@ -5,6 +5,7 @@
 import SwiftUI
 import SwiftUIToolbox
 import AttributionsUI
+import Sparkle
 
 // MARK: - Bootstrapp App
 
@@ -16,6 +17,12 @@ struct BootstrappApp: App {
 
     @State var templates = TemplatesModel()
     @State var mainWindowState = MainWindowState()
+
+    private let updaterController = SPUStandardUpdaterController(
+        startingUpdater: true,
+        updaterDelegate: nil,
+        userDriverDelegate: nil
+    )
 
     var body: some Scene {
 
@@ -31,6 +38,7 @@ struct BootstrappApp: App {
         .commands {
             SidebarCommands()
             TemplateCommands()
+            CheckForUpdatesCommand(updater: updaterController.updater)
             AboutCommand()
             HelpCommands()
 
@@ -45,6 +53,7 @@ struct BootstrappApp: App {
 
         AttributionsWindow(
             "Bootstrapp may contain the following Third-Party packages:",
+            ("Sparkle", .mit(year: "2006-2017", holder: "Andy Matuschak et al.")),
             ("Splash", .mit(year: "2018", holder: "John Sundell")),
             ("XcodeGen", .mit(year: "2018", holder: "Yonas Kolb")),
             ("AEXML", .mit(year: "2014-2019", holder: "Marko Tadić <tadija@me.com> http://tadija.net")),

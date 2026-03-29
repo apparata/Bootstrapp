@@ -30,6 +30,8 @@ DerivedData
 *.hmap
 *.xcuserstate
 
-# Claude
+# Sparkle tools
+Sparkle-tools/
 
+# Claude
 .claude/settings.local.json
