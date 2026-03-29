@@ -88,8 +88,10 @@ echo "▸ Archiving..."
 xcodebuild archive \
     -project "$PROJECT_DIR/Bootstrapp.xcodeproj" \
     -scheme "$SCHEME" \
+    -configuration Release \
     -archivePath "$ARCHIVE_PATH" \
     -arch arm64 \
+    -allowProvisioningUpdates \
     ENABLE_HARDENED_RUNTIME=YES \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=NO \
@@ -103,6 +105,7 @@ xcodebuild -exportArchive \
     -archivePath "$ARCHIVE_PATH" \
     -exportPath "$EXPORT_DIR" \
     -exportOptionsPlist "$EXPORT_OPTIONS" \
+    -allowProvisioningUpdates \
     | tail -1
 
 APP_PATH="$EXPORT_DIR/$APP_NAME.app"
