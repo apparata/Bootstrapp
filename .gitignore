@@ -29,3 +29,7 @@ DerivedData
 .idea/
 *.hmap
 *.xcuserstate
+
+# Claude
+
+.claude/settings.local.json
