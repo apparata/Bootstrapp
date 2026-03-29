@@ -57,7 +57,7 @@ struct TemplateParametersForm: View {
                                     Text(parameter.parameter.options[$0])
                                 }
                             }.pickerStyle(PopUpButtonPickerStyle())
-                                .frame(width: 300)
+                                .frame(width: 300, alignment: .leading)
                         }
                     }.onAppear {
                         okToAnimate = true
