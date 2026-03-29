@@ -23,7 +23,7 @@ mkdir -p "$BUILD_DIR"
 
 # ── Download Sparkle tools if needed ─────────────────────────────────────────
 if [ ! -x "$SPARKLE_TOOLS_DIR/bin/sign_update" ]; then
-    echo "▸ Downloading Sparkle tools $SPARKLE_VERSION…"
+    echo "▸ Downloading Sparkle tools ${SPARKLE_VERSION}..."
     curl -sL "https://github.com/sparkle-project/Sparkle/releases/download/$SPARKLE_VERSION/Sparkle-$SPARKLE_VERSION.tar.xz" \
         -o "$BUILD_DIR/Sparkle.tar.xz"
     mkdir -p "$SPARKLE_TOOLS_DIR"
@@ -67,7 +67,7 @@ if [ "$NEW_VERSION" != "$CURRENT_VERSION" ]; then
         echo "  ✗ Version $NEW_VERSION is not newer than $LATEST_TAG"
         exit 1
     fi
-    echo "  Updating version to $NEW_VERSION…"
+    echo "  Updating version to $NEW_VERSION..."
     PBXPROJ="$PROJECT_DIR/Bootstrapp.xcodeproj/project.pbxproj"
     sed -i '' "s/MARKETING_VERSION = $CURRENT_VERSION;/MARKETING_VERSION = $NEW_VERSION;/g" "$PBXPROJ"
     sed -i '' "s/CURRENT_PROJECT_VERSION = [0-9]*;/CURRENT_PROJECT_VERSION = $NEW_VERSION;/g" "$PBXPROJ"
@@ -84,7 +84,7 @@ fi
 echo "▸ Building version $VERSION"
 
 # ── Archive ──────────────────────────────────────────────────────────────────
-echo "▸ Archiving…"
+echo "▸ Archiving..."
 xcodebuild archive \
     -project "$PROJECT_DIR/Bootstrapp.xcodeproj" \
     -scheme "$SCHEME" \
@@ -98,7 +98,7 @@ xcodebuild archive \
 echo "  ✓ Archive complete"
 
 # ── Export ───────────────────────────────────────────────────────────────────
-echo "▸ Exporting…"
+echo "▸ Exporting..."
 xcodebuild -exportArchive \
     -archivePath "$ARCHIVE_PATH" \
     -exportPath "$EXPORT_DIR" \
@@ -114,7 +114,7 @@ DMG_NAME="${APP_NAME}-${VERSION}.dmg"
 DMG_PATH="$BUILD_DIR/$DMG_NAME"
 DMG_STAGING="$BUILD_DIR/dmg-staging"
 
-echo "▸ Creating DMG…"
+echo "▸ Creating DMG..."
 mkdir -p "$DMG_STAGING"
 cp -a "$APP_PATH" "$DMG_STAGING/"
 ln -s /Applications "$DMG_STAGING/Applications"
@@ -123,22 +123,22 @@ rm -rf "$DMG_STAGING"
 echo "  ✓ $DMG_NAME"
 
 # ── Verify codesign ─────────────────────────────────────────────────────────
-echo "▸ Verifying codesign…"
+echo "▸ Verifying codesign..."
 codesign --verify --deep --strict "$APP_PATH"
 echo "  ✓ Codesign valid"
 
 # ── Notarize ─────────────────────────────────────────────────────────────────
-echo "▸ Submitting for notarization…"
+echo "▸ Submitting for notarization..."
 xcrun notarytool submit "$DMG_PATH" \
     --keychain-profile "$KEYCHAIN_PROFILE" \
     --wait
 
-echo "▸ Stapling…"
+echo "▸ Stapling..."
 xcrun stapler staple "$DMG_PATH"
 echo "  ✓ Notarized and stapled"
 
 # ── Sign for Sparkle ─────────────────────────────────────────────────────────
-echo "▸ Signing for Sparkle…"
+echo "▸ Signing for Sparkle..."
 SPARKLE_SIG=$("$SPARKLE_TOOLS_DIR/bin/sign_update" "$DMG_PATH")
 echo "  Sparkle signature: $SPARKLE_SIG"
 
@@ -153,7 +153,7 @@ if [ -n "$RELEASE_SUBTITLE" ]; then
     RELEASE_TITLE="$RELEASE_TITLE — $RELEASE_SUBTITLE"
 fi
 
-echo "▸ Creating GitHub release $TAG…"
+echo "▸ Creating GitHub release $TAG..."
 cd "$PROJECT_DIR"
 git tag "$TAG"
 git push origin "$TAG"
@@ -166,7 +166,7 @@ gh release create "$TAG" "$DMG_PATH" \
 echo "  ✓ Release created"
 
 # ── Generate appcast ─────────────────────────────────────────────────────────
-echo "▸ Generating appcast…"
+echo "▸ Generating appcast..."
 APPCAST_DIR="$BUILD_DIR/appcast-assets"
 mkdir -p "$APPCAST_DIR"
 
