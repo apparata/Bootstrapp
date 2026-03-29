@@ -19,9 +19,9 @@ struct TemplateView: View {
     
     let templateModel: TemplateModel
 
-    @ObservedObject var parameterStore: ParameterStore
-    @ObservedObject var packageStore: PackageStore
-    
+    var parameterStore: ParameterStore { templateModel.parameterStore }
+    var packageStore: PackageStore { templateModel.packageStore }
+
     var template: BootstrappTemplate {
         templateModel.template
     }

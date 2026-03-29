@@ -8,7 +8,7 @@ import TemplateKit
 struct AddPackageSheet: View {
     
     @Binding var showingSheet: Bool
-    @ObservedObject var packageStore: PackageStore
+    var packageStore: PackageStore
     
     @State private var name: String = ""
     @State private var url: String = ""

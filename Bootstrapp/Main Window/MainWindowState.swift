@@ -4,19 +4,17 @@
 
 import Foundation
 import SwiftUI
-import Combine
-import BootstrappKit
+import Observation
 
-class MainWindowState: ObservableObject {
-    
-    @Published var isHoveringOverDropZone: Bool = false
-    
-    @Published var hoverLocation: CGPoint = .zero
-    
+@Observable
+class MainWindowState {
+
+    var isHoveringOverDropZone: Bool = false
+
+    var hoverLocation: CGPoint = .zero
+
     let hoverSpace: CoordinateSpace = .named("HoverSpace")
-    
-    var currentTemplate: BootstrappTemplate?
-    
+
     init() {
     }
 }

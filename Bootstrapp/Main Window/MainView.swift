@@ -8,8 +8,8 @@ import BootstrappKit
 
 struct MainView: View {
     
-    @EnvironmentObject var mainWindowState: MainWindowState
-    @EnvironmentObject var templates: TemplatesModel
+    @Environment(MainWindowState.self) var mainWindowState
+    @Environment(TemplatesModel.self) var templates
         
     var body: some View {
         MainSplitView()
@@ -54,7 +54,7 @@ extension MainView: DropDelegate {
                     return
                 }
                 
-                DispatchQueue.global().async {
+                Task { @MainActor in
                     templates.setTemplateRootFolder(at: url)
                 }
             }

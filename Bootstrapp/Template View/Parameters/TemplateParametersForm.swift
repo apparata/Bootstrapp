@@ -21,9 +21,10 @@ struct TemplateParametersForm: View {
     // Kludge workaround for animation bug in macOS SwiftUI
     @State var okToAnimate: Bool = false
     
-    @ObservedObject var parameterStore: ParameterStore
+    var parameterStore: ParameterStore
     
     var body: some View {
+        @Bindable var parameterStore = parameterStore
         VStack(alignment: .leading) {
             Text("Parameters").font(.subheadline).bold()
             VStack(alignment: .formFieldAlignmentGuide) {

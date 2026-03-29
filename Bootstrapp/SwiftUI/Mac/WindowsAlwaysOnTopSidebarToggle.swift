@@ -27,8 +27,8 @@ public struct WindowAlwaysOnTopSidebarToggle: View {
         .onReceive(window.publisher) { window in
             window.alwaysOnTop = isAlwaysOnTop
         }
-        .onChange(of: isAlwaysOnTop) { isOnTop in
-            window?.alwaysOnTop = isOnTop
+        .onChange(of: isAlwaysOnTop) {
+            window?.alwaysOnTop = isAlwaysOnTop
         }
     }
 }

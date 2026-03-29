@@ -4,6 +4,7 @@
 
 import SwiftUI
 import BootstrappKit
+import Observation
 
 struct ParameterValue {
     var stringValue: String
@@ -22,12 +23,13 @@ struct ParameterAndValue: Identifiable {
     var value: ParameterValue
 }
 
-class ParameterStore: ObservableObject {
-    
-    @Published var parameters: [ParameterAndValue]
-    
+@Observable
+class ParameterStore {
+
+    var parameters: [ParameterAndValue]
+
     private let originalParameters: [ParameterAndValue]
-    
+
     init(specification: BootstrappSpecification) {
         var parameters: [ParameterAndValue] = []
         for parameter in specification.parameters {
@@ -43,7 +45,7 @@ class ParameterStore: ObservableObject {
         self.parameters = parameters
         self.originalParameters = parameters
     }
-    
+
     func reset() {
         parameters = originalParameters
     }

@@ -6,8 +6,8 @@ import SwiftUI
 
 struct NoTemplatesView: View {
     
-    @EnvironmentObject private var mainWindowState: MainWindowState
-    @EnvironmentObject private var templates: TemplatesModel
+    @Environment(MainWindowState.self) private var mainWindowState
+    @Environment(TemplatesModel.self) private var templates
     
     private let dropTargetBackground = Color("dropTarget/background")
     private let dropTargetBorder = Color("dropTarget/border")

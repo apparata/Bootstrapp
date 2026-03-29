@@ -4,24 +4,24 @@
 
 import SwiftUI
 import BootstrappKit
-import Combine
 import SwiftUIToolbox
 
 struct MainSplitView: View {
     
-    @ObservedObject private var searchFilter = SearchFilter<TemplateModel>()
+    @StateObject private var searchFilter = SearchFilter<TemplateModel>()
     
-    @EnvironmentObject private var templatesViewModel: TemplatesModel
-    
-    @EnvironmentObject var windowState: MainWindowState
+    @Environment(TemplatesModel.self) private var templatesViewModel
+
+    @Environment(MainWindowState.self) var windowState
         
     init() {
         //
     }
     
     var body: some View {
+        @Bindable var templatesViewModel = templatesViewModel
         NavigationSplitView {
-            
+
             List(selection: $templatesViewModel.templateSelection) {
                 
                 ForEach(templatesViewModel.templatesByCategory.keys.sorted(), id: \.self) { category in
@@ -56,10 +56,7 @@ struct MainSplitView: View {
         } detail: {
             if let template = templatesViewModel.templateSelection {
                 ZStack {
-                    TemplateView(
-                        templateModel: template,
-                        parameterStore: template.parameterStore,
-                        packageStore: template.packageStore)
+                    TemplateView(templateModel: template)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {

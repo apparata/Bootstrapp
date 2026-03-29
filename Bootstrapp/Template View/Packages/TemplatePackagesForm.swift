@@ -10,17 +10,18 @@ struct TemplatePackagesForm: View {
     
     let template: BootstrappTemplate
         
-    @ObservedObject var packageStore: PackageStore
+    var packageStore: PackageStore
     
     @State private var showingAddPackageSheet: Bool = false
     
     var body: some View {
+        @Bindable var packageStore = packageStore
         VStack(alignment: .leading) {
-            
+
             Text("Packages")
                 .font(.subheadline)
                 .bold()
-            
+
             VStack {
                 Grid {
                     ForEach($packageStore.packages) { $package in

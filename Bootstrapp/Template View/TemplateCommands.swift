@@ -4,9 +4,13 @@
 
 import SwiftUI
 
+extension FocusedValues {
+    @Entry var templatesModel: TemplatesModel?
+}
+
 struct TemplateCommands: Commands {
-    
-    @FocusedObject var templates: TemplatesModel?
+
+    @FocusedValue(\.templatesModel) var templates
 
     var body: some Commands {
         CommandMenu(Text("Templates", comment: "Menu title for template actions")) {

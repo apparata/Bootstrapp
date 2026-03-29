@@ -20,10 +20,10 @@ public struct SplashSwiftUIOutputFormat: OutputFormat {
 }
 
 public extension SplashSwiftUIOutputFormat {
-    
+
     struct Builder: OutputBuilder {
-        
-        private var text = Text("")
+
+        private var attributedString = AttributedString()
         private let theme: Theme
         private lazy var font: SwiftUI.Font = .system(size: CGFloat(theme.font.size),
                                                       weight: .regular,
@@ -35,19 +35,28 @@ public extension SplashSwiftUIOutputFormat {
 
         public mutating func addToken(_ token: String, ofType type: TokenType) {
             let color = theme.tokenColors[type] ?? Splash.Color.white
-            text = text + Text(token).font(font).foregroundColor(Color(color))
+            var segment = AttributedString(token)
+            segment.font = font
+            segment.foregroundColor = Color(color)
+            attributedString.append(segment)
         }
 
         public mutating func addPlainText(_ text: String) {
-            self.text = self.text + Text(text).font(font).foregroundColor(Color(theme.plainTextColor))
+            var segment = AttributedString(text)
+            segment.font = font
+            segment.foregroundColor = Color(theme.plainTextColor)
+            attributedString.append(segment)
         }
 
         public mutating func addWhitespace(_ whitespace: String) {
-            text = text + Text(whitespace).font(font).foregroundColor(Color.white)
+            var segment = AttributedString(whitespace)
+            segment.font = font
+            segment.foregroundColor = Color.white
+            attributedString.append(segment)
         }
 
         public func build() -> Text {
-            return text
+            return Text(attributedString)
         }
     }
 }

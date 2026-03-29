@@ -4,6 +4,7 @@
 
 import SwiftUI
 import BootstrappKit
+import Observation
 
 struct PackageDependency: Identifiable {
     var id: String { name }
@@ -12,12 +13,13 @@ struct PackageDependency: Identifiable {
     var version: String
 }
 
-class PackageStore: ObservableObject {
-    
-    @Published var packages: [PackageDependency]
-    
+@Observable
+class PackageStore {
+
+    var packages: [PackageDependency]
+
     private let originalPackages: [PackageDependency]
-    
+
     init(specification: BootstrappSpecification) {
         var packages: [PackageDependency] = []
         for package in specification.packages {
@@ -29,13 +31,13 @@ class PackageStore: ObservableObject {
         self.packages = packages
         self.originalPackages = packages
     }
-    
+
     func addPackage(_ package: PackageDependency) {
         withAnimation {
             packages.append(package)
         }
     }
-    
+
     func removePackage(id: String) {
         withAnimation {
             packages.removeAll { package in
@@ -43,7 +45,7 @@ class PackageStore: ObservableObject {
             }
         }
     }
-    
+
     func reset() {
         packages = originalPackages
     }

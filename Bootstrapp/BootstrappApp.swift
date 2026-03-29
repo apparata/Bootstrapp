@@ -13,19 +13,20 @@ struct BootstrappApp: App {
 
     // swiftlint:disable:next weak_delegate
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-            
-    @StateObject var templates = TemplatesModel()
+
+    @State var templates = TemplatesModel()
+    @State var mainWindowState = MainWindowState()
 
     var body: some Scene {
-        
+
         WindowGroup {
             MainView()
                 .frame(minWidth: 900, minHeight: 500)
                 .edgesIgnoringSafeArea(.all)
                 .coordinateSpace(name: "HoverSpace")
-                .environmentObject(MainWindowState())
-                .environmentObject(templates)
-                .focusedSceneObject(templates)
+                .environment(mainWindowState)
+                .environment(templates)
+                .focusedSceneValue(\.templatesModel, templates)
         }
         .commands {
             SidebarCommands()
@@ -36,12 +37,12 @@ struct BootstrappApp: App {
             // Remove the "New Window" option from the File menu.
             CommandGroup(replacing: .newItem, addition: { })
         }
-        
+
         SettingsWindow()
-        
+
         AboutWindow(developedBy: "Martin Johannesson",
                     attributionsWindowID: AttributionsWindow.windowID)
-        
+
         AttributionsWindow(
             "Bootstrapp may contain the following Third-Party packages:",
             ("Splash", .mit(year: "2018", holder: "John Sundell")),
@@ -57,7 +58,7 @@ struct BootstrappApp: App {
             ("Xcodeproj", .mit(year: "2018", holder: "Pedro Piñera Buendía")),
             ("Yams", .mit(year: "2016", holder: "JP Simard"))
         )
-        
+
         HelpWindow()
     }
 }
@@ -65,15 +66,15 @@ struct BootstrappApp: App {
 // MARK: - App Delegate
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
     }
-    
+
     func applicationWillTerminate(_ notification: Notification) {
         // Stop any stuff that needs to be stopped.
     }
-    
+
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
