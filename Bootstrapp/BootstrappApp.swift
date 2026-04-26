@@ -75,6 +75,11 @@ struct BootstrappApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    // Sparkle may show its update-permission prompt before the main window
+    // appears. If that prompt is the only open window, closing it would
+    // otherwise terminate the app before it has even started.
+    var mainWindowHasAppeared = false
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
     }
@@ -84,6 +89,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
+        return mainWindowHasAppeared
+    }
+}
+
+// MARK: - View Modifier
+
+extension View {
+
+    /// Marks this view as the main window for the purposes of
+    /// `applicationShouldTerminateAfterLastWindowClosed`. Once the view has
+    /// appeared at least once, the app is allowed to terminate when the last
+    /// window closes.
+    func terminatesAppWhenClosed() -> some View {
+        onAppear {
+            (NSApp.delegate as? AppDelegate)?.mainWindowHasAppeared = true
+        }
     }
 }

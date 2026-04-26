@@ -15,6 +15,7 @@ struct MainView: View {
         MainSplitView()
             .layoutPriority(1.0)
             .onDrop(of: [UTType.fileURL], delegate: self)
+            .terminatesAppWhenClosed()
     }
 }
 
