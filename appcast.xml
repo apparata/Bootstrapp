@@ -6,10 +6,10 @@
             <title>1.6.0</title>
             <pubDate>Sun, 29 Mar 2026 16:10:55 +0200</pubDate>
             <sparkle:version>1.6.0</sparkle:version>
-            <sparkle:shortVersionString>1.6.3</sparkle:shortVersionString>
+            <sparkle:shortVersionString>1.6.4</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://github.com/apparata/Bootstrapp/releases/download/1.6.3/Bootstrapp-1.6.3.dmg" length="3572579" type="application/octet-stream" sparkle:edSignature="+Zf8XCSJJyKYLxljANXIr6vYcJQeQm9H4QMBJn0W1CQN3BDdUmVnQnKxzGxuaocCrSioW7o3Pc0NbMqZPziPDQ=="/>
+            <enclosure url="https://github.com/apparata/Bootstrapp/releases/download/1.6.4/Bootstrapp-1.6.4.dmg" length="3571990" type="application/octet-stream" sparkle:edSignature="INpoy5IJBn27V33op165ViBalMPNKA5D1XIt8jw+Wq6E8N763Da1hDYj4nJ1Os3kGkxd+h7uIhTjrMfRu8q3Aw=="/>
         </item>
     </channel>
 </rss>
