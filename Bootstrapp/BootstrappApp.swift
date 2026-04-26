@@ -78,7 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Sparkle may show its update-permission prompt before the main window
     // appears. If that prompt is the only open window, closing it would
     // otherwise terminate the app before it has even started.
-    var mainWindowHasAppeared = false
+    static var shouldTerminateAppAfterLastWindowClosed = false
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
@@ -89,7 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return mainWindowHasAppeared
+        Self.shouldTerminateAppAfterLastWindowClosed
     }
 }
 
@@ -103,7 +103,7 @@ extension View {
     /// window closes.
     func terminatesAppWhenClosed() -> some View {
         onAppear {
-            (NSApp.delegate as? AppDelegate)?.mainWindowHasAppeared = true
+            AppDelegate.shouldTerminateAppAfterLastWindowClosed = true
         }
     }
 }
