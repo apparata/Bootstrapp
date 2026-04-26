@@ -33,7 +33,9 @@ extension MainView: DropDelegate {
     ///
     /// Return `true` if the drop was successful, `false` otherwise.
     func performDrop(info: DropInfo) -> Bool {
-        
+
+        mainWindowState.isHoveringOverDropZone = false
+
         let itemProviders = info.itemProviders(for: [UTType.fileURL])
 
         guard itemProviders.count == 1 else {
