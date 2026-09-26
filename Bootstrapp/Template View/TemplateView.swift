@@ -106,10 +106,12 @@ struct TemplateView: View {
 
                 if case .xcodeProject = template.specification.type {
                     Picker("", selection: $openIn) {
-                        Text("Open in Finder").tag(OpenIn.finder)
-                        Text("Open in Xcode").tag(OpenIn.Xcode)
+                        Text("Open in Finder").padding(.horizontal, 4).tag(OpenIn.finder)
+                        Text("Open in Xcode").padding(.horizontal, 4).tag(OpenIn.Xcode)
                     }
+                    .pickerStyle(.menu)
                     .labelsHidden()
+                    .fixedSize()
                 }
                 Button {
                     makeAction()
